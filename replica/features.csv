@@ -1,0 +1,18 @@
+Feature,Category,Priority,Original,Entele-Visuals,Notes
+Components Catalog (805 components),Catalog,Must,Yes,Yes,11 visual motion categories
+Sections Catalog (92 sections),Catalog,Must,Yes,Yes,9 modern landing sections
+Total Catalog (897 items across 20 categories),Catalog,Must,Yes,Yes,100% parity across all categories
+Exact OriginKit Default Order,Discovery,Must,Yes,Yes,glimmer-vale plush-tile corolla-gleam first
+Hover Video Autoplay,UI/UX,Must,Yes,Yes,Plays CDN 720p reels smoothly on card hover
+Card Expanding Hover Preview Button,UI/UX,Must,Yes,Yes,Eye button smoothly expands to Preview on hover
+Live Stage Preview Modal,UI/UX,Must,Yes,Yes,High-def stage with play/pause reload fullscreen
+Adjacent Thumbnails Carousel Strip,UI/UX,Must,Yes,Yes,Sliding strip with offsets [0 -1 1 -2 2 -3 3]
+Keyboard Navigation,UI/UX,Should,Yes,Yes,ArrowLeft ArrowRight and Escape hotkeys
+OriginKit Left Sidebar (AppFrame),Layout,Must,Yes,Yes,Exact sidebar with mode switcher and search
+Top Sticky Command Bar,Layout,Must,Yes,Yes,Discover count active filter chips and shiny banner
+Multi-Framework Code Generator,Export,Must,Yes,Yes,React / Next.js / Vite / Framer with Tailwind and CSS
+Instant Search & Filter,Discovery,Must,Yes,Yes,Instant sub-millisecond search across all 897 items
+Sorting,Discovery,Should,Yes,Yes,OriginKit default / featured / most popular / newest / A-Z
+Dark Luxury Design Tokens,Design,Must,Yes,Yes,#0f0f10 bg #1b1c1d card #222425 card-body #3e3f40 stroke
+MCP Assistant Integration,Agentic,Should,Yes,Yes,Model Context Protocol schema and guide
+Terminal CLI Install Command,DevEx,Should,Yes,Yes,npx originkit add <name> command
