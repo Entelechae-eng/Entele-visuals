@@ -45,6 +45,16 @@ export type PlatformType =
   | 'astro'
   | 'nuxt';
 
+export type TemplateSource =
+  | 'framer'
+  | 'webflow'
+  | 'shopify'
+  | 'nextjs'
+  | 'react'
+  | 'astro'
+  | 'nuxt'
+  | string;
+
 export interface TemplatePagespeedScore {
   performance: number;
   accessibility: number;
@@ -65,7 +75,7 @@ export interface TemplateItem {
   url: string;
   listing?: string;
   cover: string;
-  source: 'framer' | 'webflow' | 'shopify' | 'nextjs' | 'react' | 'astro' | 'nuxt';
+  source: TemplateSource;
   price: string | null;
   pricing?: string;
   market?: string;

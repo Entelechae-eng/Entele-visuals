@@ -23,7 +23,7 @@ export default defineConfig({
       '/api/templens': {
         target: 'https://templens.com',
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api\/templens/, '/api'),
+        rewrite: (path) => path.replace(/^\/api\/templens(\/search)?/, '/api/search'),
         headers: {
           'Origin': 'https://templens.com',
           'Referer': 'https://templens.com/',
@@ -37,7 +37,7 @@ export default defineConfig({
       '/api/templens': {
         target: 'https://templens.com',
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api\/templens/, '/api'),
+        rewrite: (path) => path.replace(/^\/api\/templens(\/search)?/, '/api/search'),
         headers: {
           'Origin': 'https://templens.com',
           'Referer': 'https://templens.com/',

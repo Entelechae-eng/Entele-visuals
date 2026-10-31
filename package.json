@@ -1,12 +1,16 @@
 {
   "name": "entele-visuals",
   "private": true,
-  "version": "1.0.0",
+  "version": "2.2.0",
+  "description": "High-performance motion design engine & web template discovery suite with 897 interactive motion components and 28,047 web templates.",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   },
   "dependencies": {
     "clsx": "^2.1.1",
@@ -27,4 +31,3 @@
     "vite": "^6.1.0"
   }
 }
-

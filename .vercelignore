@@ -1,0 +1,7 @@
+.git
+scratch
+replica
+*.log
+.DS_Store
+.vscode
+.idea

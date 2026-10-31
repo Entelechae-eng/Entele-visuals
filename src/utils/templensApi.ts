@@ -35,7 +35,7 @@ export async function fetchTemplates({
   const cleanQ = sanitizeSearchQuery(query);
   const sourceParam = platform === 'all' ? '' : platform;
 
-  // 1. Try proxied /api/templens/search (works in Vite dev/preview and Vercel/Netlify rewrites)
+  // 1. Try Vercel Serverless Function & Vite dev proxy at /api/templens
   try {
     let res: Response;
     if (cleanQ) {
@@ -53,7 +53,7 @@ export async function fetchTemplates({
         }),
       });
     } else {
-      const url = new URL('/api/templens/search', window.location.origin);
+      const url = new URL('/api/templens', window.location.origin);
       url.searchParams.set('offset', String(offset));
       if (sourceParam) url.searchParams.set('source', sourceParam);
       if (onlyFree) url.searchParams.set('only', 'free');
@@ -77,13 +77,13 @@ export async function fetchTemplates({
           url: sanitizeUrl(x.url),
           listing: sanitizeUrl(x.listing),
           cover: sanitizeUrl(x.cover),
-          source: (x.source || 'framer') as any,
-          price: x.price,
+          source: String(x.source || 'framer'),
+          price: x.price ? String(x.price) : null,
           pricing: x.pricing || (x.price ? `$${x.price}` : 'Free'),
           market: String(x.market || ''),
           category: x.category || null,
-          site_type: x.site_type || '',
-          description: x.description || '',
+          site_type: String(x.site_type || 'template'),
+          description: String(x.description || ''),
           pages: Array.isArray(x.pages) ? x.pages : [],
           sections: Array.isArray(x.sections) ? x.sections : [],
           features: Array.isArray(x.features) ? x.features : [],
@@ -100,7 +100,7 @@ export async function fetchTemplates({
       }
     }
   } catch {
-    // Proxy not available or offline: fall through to local cached dataset
+    // Upstream or network exception: fall through to local dataset
   }
 
   // 2. High-performance offline fallback with 1,774 curated templates in exact Templens order
@@ -134,6 +134,7 @@ export async function fetchTemplates({
   return {
     items: paginated.map((t) => ({
       ...t,
+      source: String(t.source || 'framer'),
       url: sanitizeUrl(t.url),
       listing: sanitizeUrl(t.listing),
       cover: sanitizeUrl(t.cover),
