@@ -169,10 +169,13 @@ export const Sidebar: React.FC<SidebarProps> = ({
         {/* Mode Switcher Tabs */}
         <div className="p-2 border-b border-white/[0.06]">
           <div className="grid grid-cols-2 gap-1 rounded-xl bg-black/50 p-1 border border-white/[0.06]">
-            <button
-              type="button"
-              onClick={() => onSelectMode('templates')}
-              className={`rounded-lg py-1.5 text-[11px] font-medium transition-all ${
+            <a
+              href="?mode=templates"
+              onClick={(e) => {
+                e.preventDefault();
+                onSelectMode('templates');
+              }}
+              className={`rounded-lg py-1.5 text-center text-[11px] font-medium transition-all ${
                 modeFilter === 'templates'
                   ? 'bg-white/15 text-white shadow-sm font-semibold'
                   : 'text-neutral-400 hover:text-white'
@@ -180,11 +183,14 @@ export const Sidebar: React.FC<SidebarProps> = ({
             >
               Templates
               <span className="ml-1 text-[9px] opacity-60">28k</span>
-            </button>
-            <button
-              type="button"
-              onClick={() => onSelectMode('components')}
-              className={`rounded-lg py-1.5 text-[11px] font-medium transition-all ${
+            </a>
+            <a
+              href="?mode=components"
+              onClick={(e) => {
+                e.preventDefault();
+                onSelectMode('components');
+              }}
+              className={`rounded-lg py-1.5 text-center text-[11px] font-medium transition-all ${
                 modeFilter === 'components'
                   ? 'bg-white/15 text-white shadow-sm font-semibold'
                   : 'text-neutral-400 hover:text-white'
@@ -192,11 +198,14 @@ export const Sidebar: React.FC<SidebarProps> = ({
             >
               Components
               <span className="ml-1 text-[9px] opacity-60">805</span>
-            </button>
-            <button
-              type="button"
-              onClick={() => onSelectMode('sections')}
-              className={`rounded-lg py-1 text-[11px] font-medium transition-all ${
+            </a>
+            <a
+              href="?mode=sections"
+              onClick={(e) => {
+                e.preventDefault();
+                onSelectMode('sections');
+              }}
+              className={`rounded-lg py-1 text-center text-[11px] font-medium transition-all ${
                 modeFilter === 'sections'
                   ? 'bg-white/15 text-white shadow-sm font-semibold'
                   : 'text-neutral-400 hover:text-white'
@@ -204,11 +213,14 @@ export const Sidebar: React.FC<SidebarProps> = ({
             >
               Sections
               <span className="ml-1 text-[9px] opacity-60">92</span>
-            </button>
-            <button
-              type="button"
-              onClick={() => onSelectMode('all')}
-              className={`rounded-lg py-1 text-[11px] font-medium transition-all ${
+            </a>
+            <a
+              href="?mode=all"
+              onClick={(e) => {
+                e.preventDefault();
+                onSelectMode('all');
+              }}
+              className={`rounded-lg py-1 text-center text-[11px] font-medium transition-all ${
                 modeFilter === 'all'
                   ? 'bg-white/15 text-white shadow-sm font-semibold'
                   : 'text-neutral-400 hover:text-white'
@@ -216,7 +228,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
             >
               All Assets
               <span className="ml-1 text-[9px] opacity-60">29k</span>
-            </button>
+            </a>
           </div>
         </div>
 
@@ -258,10 +270,13 @@ export const Sidebar: React.FC<SidebarProps> = ({
               {PLATFORM_STATS.map((p) => {
                 const isSelected = selectedPlatform === p.id;
                 return (
-                  <button
+                  <a
                     key={p.id}
-                    type="button"
-                    onClick={() => onSelectPlatform(p.id)}
+                    href={`?platform=${p.id}`}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      onSelectPlatform(p.id);
+                    }}
                     className={`group flex w-full items-center justify-between rounded-lg px-2.5 py-1.5 text-xs font-medium transition-all ${
                       isSelected
                         ? 'bg-white/15 text-white font-semibold shadow-sm'
@@ -283,7 +298,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
                     >
                       {p.count.toLocaleString()}
                     </span>
-                  </button>
+                  </a>
                 );
               })}
             </>
@@ -291,9 +306,12 @@ export const Sidebar: React.FC<SidebarProps> = ({
             /* Standard Components / Sections Catalog Categories */
             <>
               {/* "All" Category Pill */}
-              <button
-                type="button"
-                onClick={() => onSelectCategory('all')}
+              <a
+                href={modeFilter === 'sections' ? '?mode=sections' : '?mode=components'}
+                onClick={(e) => {
+                  e.preventDefault();
+                  onSelectCategory('all');
+                }}
                 className={`group flex w-full items-center justify-between rounded-lg px-2.5 py-1.5 text-xs font-medium transition-all ${
                   selectedCategory === 'all'
                     ? 'bg-white/15 text-white font-semibold shadow-sm'
@@ -323,16 +341,19 @@ export const Sidebar: React.FC<SidebarProps> = ({
                     ? totalComponentsCount
                     : totalComponentsCount + totalSectionsCount}
                 </span>
-              </button>
+              </a>
 
               {/* Individual Category Pills */}
               {filteredCategories.map((cat) => {
                 const isSelected = selectedCategory === cat.id;
                 return (
-                  <button
+                  <a
                     key={cat.id}
-                    type="button"
-                    onClick={() => onSelectCategory(cat.id)}
+                    href={`?category=${cat.id}`}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      onSelectCategory(cat.id);
+                    }}
                     className={`group flex w-full items-center justify-between rounded-lg px-2.5 py-1.5 text-xs font-medium transition-all ${
                       isSelected
                         ? 'bg-white/15 text-white font-semibold shadow-sm'
@@ -356,7 +377,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
                     >
                       {cat.count}
                     </span>
-                  </button>
+                  </a>
                 );
               })}
             </>

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://agentic-resource-discovery.org/schemas/v1/ai-catalog.json",
+  "name": "Entelechae Visuals",
+  "description": "897 animated motion components & 28,047 web templates for modern creative developers",
+  "url": "https://entele-visuals.vercel.app/",
+  "version": "1.0.0",
+  "llms_txt": "https://entele-visuals.vercel.app/llms.txt",
+  "resources": [
+    {
+      "name": "Components Catalog",
+      "type": "dataset",
+      "url": "https://entele-visuals.vercel.app/?mode=components"
+    },
+    {
+      "name": "Web Templates Directory",
+      "type": "directory",
+      "url": "https://entele-visuals.vercel.app/?mode=templates"
+    }
+  ]
+}

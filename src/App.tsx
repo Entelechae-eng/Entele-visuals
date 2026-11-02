@@ -77,6 +77,78 @@ export const App: React.FC = () => {
     };
   }, []);
 
+  // Initialize from URL query parameters on mount (Deep-linking & SEO)
+  useEffect(() => {
+    try {
+      const params = new URLSearchParams(window.location.search);
+      const urlMode = params.get('mode') as ModeFilter | null;
+      const urlCat = params.get('category');
+      const urlPlatform = params.get('platform') as PlatformType | null;
+      const urlQ = params.get('q');
+      const urlComp = params.get('component');
+
+      if (urlMode && ['templates', 'components', 'sections', 'all'].includes(urlMode)) {
+        setModeFilter(urlMode);
+      }
+      if (urlCat) {
+        setSelectedCategory(urlCat);
+        if (['hero', 'features', 'pricing', 'testimonials', 'stats', 'cta', 'faq', 'footer', 'contact'].includes(urlCat)) {
+          setModeFilter('sections');
+        } else if (urlCat !== 'all') {
+          setModeFilter('components');
+        }
+      }
+      if (urlPlatform && ['all', 'framer', 'webflow', 'shopify', 'nextjs', 'react', 'astro', 'nuxt'].includes(urlPlatform)) {
+        setSelectedPlatform(urlPlatform);
+        setModeFilter('templates');
+      }
+      if (urlQ) {
+        setSearchQuery(urlQ);
+      }
+      if (urlComp) {
+        const match = (componentsData as ComponentItem[]).find(
+          (c) => c.id === urlComp || c.name.toLowerCase() === urlComp.toLowerCase()
+        );
+        if (match) setPreviewComponent(match);
+      }
+    } catch {
+      // Ignore URL initialization errors
+    }
+  }, []);
+
+  // Sync state to URL and dynamically update document title (SEO & Shareability)
+  useEffect(() => {
+    try {
+      const params = new URLSearchParams();
+      if (modeFilter !== 'templates') params.set('mode', modeFilter);
+      if (selectedCategory !== 'all') params.set('category', selectedCategory);
+      if (selectedPlatform !== 'all') params.set('platform', selectedPlatform);
+      if (debouncedQuery) params.set('q', debouncedQuery);
+
+      const searchStr = params.toString();
+      const newUrl = searchStr ? `?${searchStr}` : window.location.pathname;
+      window.history.replaceState({}, '', newUrl);
+
+      // Dynamic Title
+      let dynamicTitle = 'Entele-Visuals — Animated Components & 28,047 Web Templates';
+      if (selectedCategory !== 'all') {
+        const catObj = CATEGORIES.find((c) => c.id === selectedCategory);
+        const catName = catObj?.label || selectedCategory;
+        dynamicTitle = `${catName} Components — Entele-Visuals`;
+      } else if (selectedPlatform !== 'all') {
+        const pName = selectedPlatform.charAt(0).toUpperCase() + selectedPlatform.slice(1);
+        dynamicTitle = `${pName} Website Templates — Entele-Visuals`;
+      } else if (modeFilter === 'components') {
+        dynamicTitle = '897 Animated Motion Components — Entele-Visuals';
+      } else if (modeFilter === 'sections') {
+        dynamicTitle = 'Landing Page Sections & Heroes — Entele-Visuals';
+      }
+      document.title = dynamicTitle;
+    } catch {
+      // Ignore history API errors
+    }
+  }, [modeFilter, selectedCategory, selectedPlatform, debouncedQuery]);
+
   // Cast JSON data to ComponentItem array (897 components in exact catalog order)
   const allComponents = useMemo(() => componentsData as ComponentItem[], []);
 

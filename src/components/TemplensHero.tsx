@@ -84,6 +84,9 @@ export const TemplensHero: React.FC<TemplensHeroProps> = ({
         <h1 className="text-2xl sm:text-4xl lg:text-5xl font-medium tracking-tight text-white mb-2">
           Describe your site. We’ll find the template.
         </h1>
+        <h2 className="sr-only">
+          Directory of 28,047 Web Templates across Framer, Webflow, Shopify, Next.js, React, Astro and Nuxt
+        </h2>
 
         <p className="mx-auto max-w-2xl text-xs sm:text-sm text-neutral-400 mb-5 leading-relaxed">
           Over <span className="text-white font-medium">28,047</span> web templates across Framer, Webflow, Shopify, Next.js, React, Astro and Nuxt.
@@ -117,11 +120,15 @@ export const TemplensHero: React.FC<TemplensHeroProps> = ({
         <div className="flex items-center justify-start sm:justify-center gap-1.5 overflow-x-auto no-scrollbar pb-1.5 sm:pb-0 mb-3">
           {PLATFORM_STATS.map((stat) => {
             const isSelected = selectedPlatform === stat.id;
+            const targetUrl = stat.id === 'all' ? '?mode=templates' : `?platform=${stat.id}`;
             return (
-              <button
+              <a
                 key={stat.id}
-                type="button"
-                onClick={() => onSelectPlatform(stat.id)}
+                href={targetUrl}
+                onClick={(e) => {
+                  e.preventDefault();
+                  onSelectPlatform(stat.id);
+                }}
                 className={`ui-press shrink-0 flex items-center gap-1.5 rounded-lg px-2.5 py-1 text-xs font-medium transition-all ${
                   isSelected
                     ? 'bg-white text-black font-semibold'
@@ -136,7 +143,7 @@ export const TemplensHero: React.FC<TemplensHeroProps> = ({
                 >
                   {stat.count >= 1000 ? `${(stat.count / 1000).toFixed(1)}k` : stat.count}
                 </span>
-              </button>
+              </a>
             );
           })}
         </div>

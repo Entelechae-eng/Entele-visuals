@@ -61,8 +61,12 @@ export const CategoryNav: React.FC<CategoryNavProps> = ({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center gap-2 overflow-x-auto no-scrollbar scroll-smooth pb-1 -mb-1">
           {/* All button */}
-          <button
-            onClick={() => onSelectCategory('all')}
+          <a
+            href="?category=all"
+            onClick={(e) => {
+              e.preventDefault();
+              onSelectCategory('all');
+            }}
             className={`flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-medium whitespace-nowrap transition-all ${
               selectedCategory === 'all'
                 ? 'bg-blue-600 text-white shadow-md shadow-blue-500/25 border border-blue-500'
@@ -80,15 +84,19 @@ export const CategoryNav: React.FC<CategoryNavProps> = ({
             >
               {totalCount}
             </span>
-          </button>
+          </a>
 
           {/* 11 Specific Categories */}
           {CATEGORIES.map((cat) => {
             const isSelected = selectedCategory === cat.id;
             return (
-              <button
+              <a
                 key={cat.id}
-                onClick={() => onSelectCategory(cat.id)}
+                href={`?category=${cat.id}`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  onSelectCategory(cat.id);
+                }}
                 className={`flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-medium whitespace-nowrap transition-all ${
                   isSelected
                     ? 'bg-blue-600 text-white shadow-md shadow-blue-500/25 border border-blue-500'
@@ -106,7 +114,7 @@ export const CategoryNav: React.FC<CategoryNavProps> = ({
                 >
                   {cat.count}
                 </span>
-              </button>
+              </a>
             );
           })}
         </div>

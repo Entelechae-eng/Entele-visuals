@@ -1,0 +1,116 @@
+{
+  "summary": {
+    "health_score": 60,
+    "grade": "C+",
+    "domain": "entele-visuals.vercel.app",
+    "business_type": "Developer Tools & UI Asset Directory (SaaS/Directory Hybrid)",
+    "audited_at": "2026-11-03T00:55:00Z",
+    "top_findings": [
+      {
+        "severity": "Critical",
+        "title": "Missing robots.txt & XML Sitemap due to SPA Wildcard Catch-all",
+        "impact": "Search engine crawlers receiving HTML with DOCTYPE for sitemap.xml and robots.txt, causing indexing failure."
+      },
+      {
+        "severity": "Critical",
+        "title": "Missing Canonical Tag",
+        "impact": "No <link rel='canonical'> leaves site vulnerable to duplicate content indexing across Vercel deployment URLs."
+      },
+      {
+        "severity": "High",
+        "title": "Total Absence of Schema.org Structured Data",
+        "impact": "0 JSON-LD blocks found. Missing WebSite, WebApplication, and ItemList schema for 28,047 templates and 897 components."
+      },
+      {
+        "severity": "High",
+        "title": "Missing Open Graph & Twitter Social Metadata",
+        "impact": "Links shared across X, Discord, Slack, and LinkedIn generate blank snippet cards without rich media."
+      },
+      {
+        "severity": "High",
+        "title": "Agentic & AI Search Soft-404 / Catch-all 200",
+        "impact": "/llms.txt and /.well-known/ai-catalog.json return HTML status 200, failing Lighthouse Agentic and AI engine ingestion."
+      }
+    ],
+    "quick_wins": [
+      "Create public/robots.txt with sitemap reference and dedicated AI crawler access rules.",
+      "Create public/sitemap.xml and public/llms.txt for search engines and AI agents.",
+      "Add canonical tag and Open Graph/Twitter Card meta tags to index.html.",
+      "Inject WebSite and WebApplication JSON-LD schema into index.html."
+    ]
+  },
+  "categories": [
+    {
+      "name": "Technical SEO",
+      "score": 68,
+      "findings": [
+        {
+          "title": "Missing Canonical URL declaration",
+          "severity": "Critical",
+          "description": "The page does not declare a canonical URL tag (<link rel='canonical'>).",
+          "recommendation": "Add <link rel='canonical' href='https://entele-visuals.vercel.app/' /> to <head> in index.html."
+        },
+        {
+          "title": "Wildcard rewrite serving HTML for robots.txt & sitemap.xml",
+          "severity": "Critical",
+          "description": "sitemap.xml returns HTTP 200 with HTML DOCTYPE ('DOCTYPE is not allowed in sitemap XML'). robots.txt also serves HTML.",
+          "recommendation": "Provide real static public/robots.txt and public/sitemap.xml files in Vite public directory."
+        },
+        {
+          "title": "Client-Side Rendering (SPA) shell without fallback content",
+          "severity": "Medium",
+          "description": "Initial HTML payload contains only 8 words and empty root div before hydration.",
+          "recommendation": "Include static noscript / pre-rendered semantic HTML fallback inside index.html for non-JS bots."
+        }
+      ]
+    },
+    {
+      "name": "Structured Data & Schema.org",
+      "score": 0,
+      "findings": [
+        {
+          "title": "Zero Schema.org JSON-LD blocks detected",
+          "severity": "Critical",
+          "description": "parse_html and render_page found 0 JSON-LD blocks.",
+          "recommendation": "Inject WebSite, Organization, and WebApplication JSON-LD markup."
+        }
+      ]
+    },
+    {
+      "name": "AI Search Readiness & Agentic GEO",
+      "score": 35,
+      "findings": [
+        {
+          "title": "Missing llms.txt standard file",
+          "severity": "High",
+          "description": "/llms.txt returns soft-404 HTML instead of Markdown.",
+          "recommendation": "Create a compliant public/llms.txt with H1, blockquote summary, and curated platform links."
+        },
+        {
+          "title": "Lack of semantic anchor links (<a>)",
+          "severity": "High",
+          "description": "Template filtering and navigation use button and div elements, blocking crawler link traversal.",
+          "recommendation": "Ensure key navigation categories and template details use semantic anchor tags."
+        }
+      ]
+    },
+    {
+      "name": "Content Quality & On-Page",
+      "score": 78,
+      "findings": [
+        {
+          "title": "Missing Open Graph and Twitter Card tags",
+          "severity": "High",
+          "description": "No og:title, og:description, og:image, twitter:card tags exist in index.html.",
+          "recommendation": "Add complete Open Graph and Twitter summary_large_image tags."
+        },
+        {
+          "title": "Weak H1/H2 heading hierarchy",
+          "severity": "Medium",
+          "description": "Current H1 is 'Describe your site. We’ll find the template.' and 0 H2 tags are defined in the DOM.",
+          "recommendation": "Structure headings with brand/entity H1 and descriptive H2s for Categories and Features."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+User-agent: *
+Allow: /
+
+# Dedicated AI Search & Evaluation Agents
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Prevent crawl traps on raw tracking/search parameters
+Disallow: /*?*utm_*
+Disallow: /*?*fbclid*
+
+# XML Sitemap
+Sitemap: https://entele-visuals.vercel.app/sitemap.xml
+

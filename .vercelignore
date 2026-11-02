@@ -1,7 +1,10 @@
 .git
 scratch
 replica
+docs
+entele-visuals.vercel.app-audit
 *.log
 .DS_Store
 .vscode
 .idea
+

@@ -1,0 +1,34 @@
+# Entelechae Visuals
+
+> Entelechae Visuals is a creative frontend development and motion design resource discovery platform. It provides 897 interactive, copy-ready UI components and 28,047 web templates across Framer, Webflow, Shopify, Next.js, React, Astro, and Nuxt with live previews.
+
+## Core Asset Collections
+- [All Motion Components](https://entele-visuals.vercel.app/?mode=components): 897 interactive UI components for React, Tailwind CSS, and Framer Motion.
+- [Web Templates Directory](https://entele-visuals.vercel.app/?mode=templates): 28,047 production website templates across modern frameworks with live iframe previews.
+- [Landing Page Sections](https://entele-visuals.vercel.app/?mode=sections): 92 modular hero sections, pricing tables, testimonials, features, and footer blocks.
+
+## Component Categories
+- [Background Animations](https://entele-visuals.vercel.app/?category=background-animation): 295 canvas, WebGL, particle, and gradient shader background animations.
+- [Interactive Elements & 3D Cards](https://entele-visuals.vercel.app/?category=interactive-elements): 132 interactive React elements, 3D tilt cards, and physics hover widgets.
+- [Hero Sections](https://entele-visuals.vercel.app/?category=hero): 71 animated hero sections and landing page intros.
+- [Typography & Text Animations](https://entele-visuals.vercel.app/?category=text): 91 animated kinetic text, gradient text, and typewriter effects.
+- [Motion & Transitions](https://entele-visuals.vercel.app/?category=animation): 102 scroll-triggered animations, page reveals, and motion primitives.
+- [Image Galleries](https://entele-visuals.vercel.app/?category=image-gallery): 50 interactive photo grids, card stacks, and carousel components.
+- [Animated Buttons](https://entele-visuals.vercel.app/?category=button): 29 animated buttons with border shimmers, magnetic pull, and liquid glow.
+- [Modern Loaders](https://entele-visuals.vercel.app/?category=loader): 28 minimalist spinners and progress indicators.
+- [Custom Cursors](https://entele-visuals.vercel.app/?category=cursor): 24 interactive mouse follower and trailing glow cursor effects.
+
+## Supported Platforms & Frameworks
+- [Framer Templates](https://entele-visuals.vercel.app/?platform=framer): Curated Framer templates for agencies, SaaS, and portfolios.
+- [Next.js Templates](https://entele-visuals.vercel.app/?platform=nextjs): Production-ready Next.js & Tailwind CSS web templates.
+- [Webflow Templates](https://entele-visuals.vercel.app/?platform=webflow): Animated Webflow showcase templates and business themes.
+- [Shopify Templates](https://entele-visuals.vercel.app/?platform=shopify): Modern e-commerce store templates with animated product cards.
+- [React Templates](https://entele-visuals.vercel.app/?platform=react): Standalone React UI templates and client dashboards.
+- [Astro Templates](https://entele-visuals.vercel.app/?platform=astro): High-speed, content-focused Astro portfolio templates.
+- [Nuxt Templates](https://entele-visuals.vercel.app/?platform=nuxt): Modern Vue.js and Nuxt SSR website templates.
+
+## Developer Quick Access
+- License: MIT License for code components.
+- Implementation: Copy-paste React TSX/JSX, Tailwind CSS classes, and Framer Motion animation properties.
+- Parent Brand: Entelechae (https://entelechae.com).
+
