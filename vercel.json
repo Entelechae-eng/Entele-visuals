@@ -66,6 +66,19 @@
       ]
     },
     {
+      "source": "/e7d4f82a1b9c3e5062a4d8f071b5e9ca.txt",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/plain; charset=utf-8"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400, stale-while-revalidate=86400"
+        }
+      ]
+    },
+    {
       "source": "/(.*)",
       "headers": [
         {
