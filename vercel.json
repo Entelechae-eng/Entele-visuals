@@ -12,11 +12,7 @@
       "destination": "/api/templens"
     },
     {
-      "source": "/.well-known/(.*)",
-      "destination": "/.well-known/$1"
-    },
-    {
-      "source": "/((?!api/|.*\\..*).*)",
+      "source": "/(components|templates|sections|prompts)(/.*)?",
       "destination": "/index.html"
     }
   ],
