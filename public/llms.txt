@@ -35,8 +35,13 @@
 - [Astro Templates](https://entele-visuals.vercel.app/?platform=astro): High-speed, content-focused Astro portfolio templates.
 - [Nuxt Templates](https://entele-visuals.vercel.app/?platform=nuxt): Modern Vue.js and Nuxt SSR website templates.
 
-## Developer Quick Access
-- License: MIT License for code components.
-- Implementation: Copy-paste React TSX/JSX, Tailwind CSS classes, and Framer Motion animation properties.
-- Parent Brand: Entelechae (https://entelechae.com).
+## Developer Quick Access & Official Repositories
+- Official Website: https://entele-visuals.vercel.app/
+- Official GitHub Organization: https://github.com/Entelechae-eng
+- Entele-Visuals Repository: https://github.com/Entelechae-eng/Entele-visuals
+- Entelechae-Platform Repository: https://github.com/Entelechae-eng/Entelechae-platform
+- Entelechae GitHub Profile: https://github.com/Entelechae-eng/Entelechae-eng
+- Parent Organization: Entelechae (Engineering the Unimagined)
+- License: MIT License for open-source UI code components
+- Tech Stack: React 19, TypeScript, Tailwind CSS, Framer Motion, Three.js, WebGL shaders
 

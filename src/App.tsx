@@ -238,57 +238,57 @@ export const App: React.FC = () => {
       const finalUrl = searchStr ? `${basePath}?${searchStr}` : basePath;
       window.history.replaceState({}, '', finalUrl);
 
-      // Dynamic Title & Meta Description
-      let dynamicTitle = 'Entele-Visuals — Animated Components, 28,047 Web Templates & 3D Prompts';
-      let dynamicDescription = 'Entele-Visuals: 29,627 curated frontend resources. 897 interactive motion components, 28,047 web templates across Framer, Webflow, Shopify, Next.js, and 683 immersive 3D AI prompts.';
+      // Dynamic Title & Meta Description with Brand Query Anchors
+      let dynamicTitle = 'Entelechae Visuals (Entele-Visuals) — 29,627 Free Components, Web Templates & 3D Prompts';
+      let dynamicDescription = 'Entelechae Visuals (Entele-Visuals by @Entelechae-eng): 29,627 curated frontend resources. 897 interactive motion components, 28,047 web templates across Framer, Webflow, Shopify, Next.js, and 683 immersive 3D AI prompts.';
 
       if (modeFilter === 'immersive') {
         if (selectedImmersiveCategory === 'template') {
-          dynamicTitle = 'Immersive Website Templates & Prompts — Entele-Visuals';
-          dynamicDescription = 'Browse full-page immersive website prompts and 3D architectural blueprints for Cursor, Claude 3.7, and v0. Copy-ready WebGL and Tailwind setups.';
+          dynamicTitle = 'Immersive Website Templates & Prompts — Entelechae Visuals (@Entelechae-eng)';
+          dynamicDescription = 'Browse full-page immersive website prompts and 3D architectural blueprints by Entelechae for Cursor, Claude 3.7, and v0. Copy-ready WebGL and Tailwind setups.';
         } else if (selectedImmersiveCategory === '3d_scene') {
-          dynamicTitle = '3D Scene Prompts & WebGL Shaders — Entele-Visuals';
-          dynamicDescription = 'Interactive 3D WebGL scenes, Three.js shaders, and particle canvas prompts. 60fps GPU-accelerated blueprints for modern creative web development.';
+          dynamicTitle = '3D Scene Prompts & WebGL Shaders — Entelechae Visuals (@Entelechae-eng)';
+          dynamicDescription = 'Interactive 3D WebGL scenes, Three.js shaders, and particle canvas prompts by Entelechae. 60fps GPU-accelerated blueprints for modern creative web development.';
         } else if (selectedImmersiveCategory === 'section') {
-          dynamicTitle = 'Interactive Section Prompts — Entele-Visuals';
+          dynamicTitle = 'Interactive Section Prompts — Entelechae Visuals (@Entelechae-eng)';
           dynamicDescription = 'Copy-ready AI prompts for dynamic interactive landing page sections, features, and experiential layouts with live video demonstrations.';
         } else if (selectedImmersiveCategory === 'background') {
-          dynamicTitle = 'Animated Background Prompts & Shaders — Entele-Visuals';
-          dynamicDescription = 'Discover mesmerizing animated background prompts, WebGL shader flows, and GPU particle effects for modern high-converting websites.';
+          dynamicTitle = 'Animated Background Prompts & Shaders — Entelechae Visuals (@Entelechae-eng)';
+          dynamicDescription = 'Discover mesmerizing animated background prompts, WebGL shader flows, and GPU particle effects by Entelechae for modern high-converting websites.';
         } else if (selectedImmersiveCategory === 'gradient') {
-          dynamicTitle = 'Interactive WebGL Gradients & Canvas Prompts — Entele-Visuals';
+          dynamicTitle = 'Interactive WebGL Gradients & Canvas Prompts — Entelechae Visuals (@Entelechae-eng)';
           dynamicDescription = 'Dynamic color-shifting WebGL gradients and interactive canvas prompts designed for cutting-edge digital experiences.';
         } else {
-          dynamicTitle = '683 Immersive Website Prompts & 3D Scenes — Entele-Visuals';
+          dynamicTitle = '683 Immersive Website Prompts & 3D Scenes — Entelechae Visuals (@Entelechae-eng)';
           dynamicDescription = 'Explore 683 immersive website prompts, 3D scenes, sections, backgrounds, and gradients. Optimized for Claude 3.7, Cursor, v0, and GPT-4o.';
         }
       } else if (modeFilter === 'components') {
         if (selectedCategory !== 'all') {
           const catObj = CATEGORIES.find((c) => c.id === selectedCategory);
           const catName = catObj?.label || selectedCategory;
-          dynamicTitle = `${catName} Motion Components — Entele-Visuals`;
-          dynamicDescription = `Free copy-paste ${catName.toLowerCase()} components with smooth React and Tailwind animations. MIT Licensed with live preview and code generator.`;
+          dynamicTitle = `${catName} Motion Components — Entelechae Visuals (@Entelechae-eng)`;
+          dynamicDescription = `Free copy-paste ${catName.toLowerCase()} components with smooth React and Tailwind animations by Entelechae. MIT Licensed with live preview and code generator.`;
         } else {
-          dynamicTitle = '897 Animated Motion Components for React & Tailwind — Entele-Visuals';
+          dynamicTitle = '897 Animated Motion Components for React & Tailwind — Entelechae Visuals (@Entelechae-eng)';
           dynamicDescription = 'Browse 897 interactive motion components for React, Framer Motion, and Tailwind CSS. Zero dependencies, instant code export, and live previews.';
         }
       } else if (modeFilter === 'sections') {
         if (selectedCategory !== 'all') {
           const catObj = CATEGORIES.find((c) => c.id === selectedCategory);
           const catName = catObj?.label || selectedCategory;
-          dynamicTitle = `${catName} Landing Page Sections — Entele-Visuals`;
+          dynamicTitle = `${catName} Landing Page Sections — Entelechae Visuals (@Entelechae-eng)`;
           dynamicDescription = `High-converting ${catName.toLowerCase()} section components for modern landing pages. Built with React and Tailwind CSS.`;
         } else {
-          dynamicTitle = 'Landing Page Sections & Hero Components — Entele-Visuals';
+          dynamicTitle = 'Landing Page Sections & Hero Components — Entelechae Visuals (@Entelechae-eng)';
           dynamicDescription = 'Production-ready landing page sections: heroes, feature grids, pricing tables, testimonials, and CTAs for modern web apps.';
         }
       } else if (modeFilter === 'templates') {
         if (selectedPlatform !== 'all') {
           const pName = selectedPlatform.charAt(0).toUpperCase() + selectedPlatform.slice(1);
-          dynamicTitle = `${pName} Website Templates (${pName === 'Framer' ? '12,000+' : pName === 'Webflow' ? '10,000+' : '4,000+'}) — Entele-Visuals`;
-          dynamicDescription = `Discover thousands of verified ${pName} website templates. Free and premium modern responsive designs for portfolios, SaaS, and businesses.`;
+          dynamicTitle = `${pName} Website Templates (${pName === 'Framer' ? '12,000+' : pName === 'Webflow' ? '10,000+' : '4,000+'}) — Entelechae Visuals (@Entelechae-eng)`;
+          dynamicDescription = `Discover thousands of verified ${pName} website templates on Entelechae Visuals. Free and premium modern responsive designs for portfolios, SaaS, and businesses.`;
         } else {
-          dynamicTitle = '28,047 Web Templates Across Framer, Webflow, Shopify & Next.js — Entele-Visuals';
+          dynamicTitle = '28,047 Web Templates Across Framer, Webflow, Shopify & Next.js — Entelechae Visuals (@Entelechae-eng)';
           dynamicDescription = 'Directory of 28,047 verified website templates. Filter by Framer, Webflow, Shopify, Next.js, and React with live iframe previews.';
         }
       }
