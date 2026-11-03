@@ -14,10 +14,15 @@ import {
   X,
   Bot,
   ExternalLink,
-  Globe
+  Globe,
+  Box,
+  Image,
+  Palette,
+  Layout
 } from 'lucide-react';
-import { Category, ModeFilter, PlatformType } from '../types';
+import { Category, ModeFilter, PlatformType, ImmersiveCategory } from '../types';
 import { PLATFORM_STATS, TOTAL_TEMPLATES_COUNT } from '../data/templates';
+import { IMMERSIVE_CATEGORIES } from '../data/immersiveCategories';
 
 interface SidebarProps {
   categories: Category[];
@@ -27,10 +32,13 @@ interface SidebarProps {
   onSelectMode: (mode: ModeFilter) => void;
   selectedPlatform: PlatformType;
   onSelectPlatform: (platform: PlatformType) => void;
+  selectedImmersiveCategory?: ImmersiveCategory;
+  onSelectImmersiveCategory?: (cat: ImmersiveCategory) => void;
   searchQuery: string;
   onSearchChange: (query: string) => void;
   totalComponentsCount: number;
   totalSectionsCount: number;
+  totalImmersiveCount?: number;
   onOpenMcpModal: () => void;
   isOpenMobile: boolean;
   onCloseMobile: () => void;
@@ -62,6 +70,23 @@ const getCategoryIcon = (id: string) => {
   }
 };
 
+const getImmersiveIcon = (key: ImmersiveCategory) => {
+  switch (key) {
+    case 'template':
+      return <Layout className="size-3.5 shrink-0" />;
+    case '3d_scene':
+      return <Box className="size-3.5 shrink-0" />;
+    case 'section':
+      return <Sparkles className="size-3.5 shrink-0" />;
+    case 'background':
+      return <Image className="size-3.5 shrink-0" />;
+    case 'gradient':
+      return <Palette className="size-3.5 shrink-0" />;
+    default:
+      return <Layers className="size-3.5 shrink-0" />;
+  }
+};
+
 export const Sidebar: React.FC<SidebarProps> = ({
   categories,
   selectedCategory,
@@ -70,10 +95,13 @@ export const Sidebar: React.FC<SidebarProps> = ({
   onSelectMode,
   selectedPlatform,
   onSelectPlatform,
+  selectedImmersiveCategory = 'all',
+  onSelectImmersiveCategory,
   searchQuery,
   onSearchChange,
   totalComponentsCount,
   totalSectionsCount,
+  totalImmersiveCount = 683,
   onOpenMcpModal,
   isOpenMobile,
   onCloseMobile,
@@ -107,7 +135,9 @@ export const Sidebar: React.FC<SidebarProps> = ({
       ? totalSectionsCount
       : modeFilter === 'templates'
       ? TOTAL_TEMPLATES_COUNT
-      : totalComponentsCount + totalSectionsCount + TOTAL_TEMPLATES_COUNT;
+      : modeFilter === 'immersive'
+      ? totalImmersiveCount
+      : totalComponentsCount + totalSectionsCount + TOTAL_TEMPLATES_COUNT + totalImmersiveCount;
 
   return (
     <>
@@ -148,11 +178,11 @@ export const Sidebar: React.FC<SidebarProps> = ({
               <span className="text-sm font-semibold tracking-tight text-white flex items-center gap-1.5">
                 Entele-Visuals
                 <span className="rounded bg-white/10 text-neutral-300 border border-white/15 px-1 py-0.2 text-[9px] font-mono">
-                  v2.0
+                  v2.3
                 </span>
               </span>
               <span className="text-[10px] text-neutral-400 leading-tight">
-                28,944 Assets
+                29,627 Assets
               </span>
             </div>
           </div>
@@ -185,12 +215,27 @@ export const Sidebar: React.FC<SidebarProps> = ({
               <span className="ml-1 text-[9px] opacity-60">28k</span>
             </a>
             <a
+              href="?mode=immersive"
+              onClick={(e) => {
+                e.preventDefault();
+                onSelectMode('immersive');
+              }}
+              className={`rounded-lg py-1.5 text-center text-[11px] font-medium transition-all ${
+                modeFilter === 'immersive'
+                  ? 'bg-white/15 text-white shadow-sm font-semibold'
+                  : 'text-neutral-400 hover:text-white'
+              }`}
+            >
+              Prompts
+              <span className="ml-1 text-[9px] opacity-60">683</span>
+            </a>
+            <a
               href="?mode=components"
               onClick={(e) => {
                 e.preventDefault();
                 onSelectMode('components');
               }}
-              className={`rounded-lg py-1.5 text-center text-[11px] font-medium transition-all ${
+              className={`rounded-lg py-1 text-center text-[11px] font-medium transition-all ${
                 modeFilter === 'components'
                   ? 'bg-white/15 text-white shadow-sm font-semibold'
                   : 'text-neutral-400 hover:text-white'
@@ -213,21 +258,6 @@ export const Sidebar: React.FC<SidebarProps> = ({
             >
               Sections
               <span className="ml-1 text-[9px] opacity-60">92</span>
-            </a>
-            <a
-              href="?mode=all"
-              onClick={(e) => {
-                e.preventDefault();
-                onSelectMode('all');
-              }}
-              className={`rounded-lg py-1 text-center text-[11px] font-medium transition-all ${
-                modeFilter === 'all'
-                  ? 'bg-white/15 text-white shadow-sm font-semibold'
-                  : 'text-neutral-400 hover:text-white'
-              }`}
-            >
-              All Assets
-              <span className="ml-1 text-[9px] opacity-60">29k</span>
             </a>
           </div>
         </div>
@@ -259,9 +289,50 @@ export const Sidebar: React.FC<SidebarProps> = ({
           </div>
         </div>
 
-        {/* Scrollable Categories / Platforms List */}
+        {/* Scrollable Categories / Platforms / Immersive List */}
         <div className="flex-1 overflow-y-auto px-2 py-1 space-y-0.5 no-scrollbar">
-          {modeFilter === 'templates' ? (
+          {modeFilter === 'immersive' ? (
+            /* Immersive Prompts Category List */
+            <>
+              <div className="px-2 py-1 text-[10px] font-mono uppercase tracking-wider text-neutral-500">
+                Immersive Categories ({totalImmersiveCount})
+              </div>
+              {IMMERSIVE_CATEGORIES.map((cat) => {
+                const isSelected = selectedImmersiveCategory === cat.key;
+                return (
+                  <a
+                    key={cat.key}
+                    href={`?mode=immersive&category=${cat.key}`}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      if (onSelectImmersiveCategory) {
+                        onSelectImmersiveCategory(cat.key);
+                      }
+                    }}
+                    className={`group flex w-full items-center justify-between rounded-lg px-2.5 py-1.5 text-xs font-medium transition-all ${
+                      isSelected
+                        ? 'bg-white/15 text-white font-semibold shadow-sm'
+                        : 'text-neutral-400 hover:bg-white/[0.04] hover:text-white'
+                    }`}
+                  >
+                    <div className="flex items-center gap-2 truncate">
+                      <span className={isSelected ? 'text-white' : 'text-neutral-400 group-hover:text-white'}>
+                        {getImmersiveIcon(cat.key)}
+                      </span>
+                      <span className="truncate">{cat.label}</span>
+                    </div>
+                    <span
+                      className={`rounded px-1.5 py-0.2 text-[10px] font-mono ${
+                        isSelected ? 'bg-white/20 text-white' : 'text-neutral-400 bg-white/[0.03]'
+                      }`}
+                    >
+                      {cat.count}
+                    </span>
+                  </a>
+                );
+              })}
+            </>
+          ) : modeFilter === 'templates' ? (
             /* Platforms List when Templates Mode is active */
             <>
               <div className="px-2 py-1 text-[10px] font-mono uppercase tracking-wider text-neutral-500">

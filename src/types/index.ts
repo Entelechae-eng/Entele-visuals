@@ -33,7 +33,28 @@ export interface Category {
 export type Framework = 'react' | 'nextjs' | 'vite' | 'framer';
 export type Styling = 'tailwind' | 'css' | 'cssmodules';
 export type SortOption = 'default' | 'featured' | 'popular' | 'newest' | 'alphabetical';
-export type ModeFilter = 'all' | 'components' | 'sections' | 'templates';
+export type ModeFilter = 'all' | 'components' | 'sections' | 'templates' | 'immersive';
+
+export type ImmersiveCategory = 'all' | 'template' | '3d_scene' | 'section' | 'background' | 'gradient';
+
+export interface ImmersiveItem {
+  id: string;
+  title: string;
+  category: 'template' | '3d_scene' | 'section' | 'background' | 'gradient';
+  categoryLabel: string;
+  tier: 'Free' | 'Premium';
+  description: string;
+  prompt: string;
+  image: string;
+  posterVideo: string;
+  posterVideoPreview: string;
+  tags: string[];
+  stack: string[];
+  mood: string[];
+  tone: 'dark' | 'light';
+  likes: number;
+  keywords: string[];
+}
 
 export type PlatformType =
   | 'all'

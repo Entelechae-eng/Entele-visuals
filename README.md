@@ -4,7 +4,7 @@
 [![License](https://img.shields.io/badge/License-MIT-white?style=for-the-badge&logo=opensourceinitiative&logoColor=black)](LICENSE)
 [![GitHub Repository](https://img.shields.io/badge/GitHub-Entelechae--eng%2FEntele--visuals-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Entelechae-eng/Entele-visuals)
 
-> High-performance, production-grade motion design system and web template discovery engine. Housing all **897 interactive motion components** (805 components + 92 landing sections across 20 categories) and **28,047 web templates** (Framer, Webflow, Shopify, Next.js, React, Astro, Nuxt) with Cursor-style monochrome dark aesthetics, live responsive device emulation, hardened security sandboxing, and autonomous SEO & IndexNow infrastructure.
+> High-performance, production-grade motion design system, web template discovery engine, and immersive AI design prompt suite. Housing **29,627 total creative resources**: **897 interactive motion components** (805 components + 92 landing sections across 20 categories), **28,047 web templates** (Framer, Webflow, Shopify, Next.js, React, Astro, Nuxt), and **683 immersive website prompts & 3D scenes** (Templates, 3D Scenes, Sections, Backgrounds, Gradients) with Cursor-style monochrome dark aesthetics, live responsive device emulation, hardened security sandboxing, and autonomous SEO & IndexNow infrastructure.
 
 🌐 **Live Website:** [https://entele-visuals.vercel.app/](https://entele-visuals.vercel.app/)
 
@@ -30,6 +30,23 @@ Curated directory of full-site templates arranged in exact reference sequence:
 | **React** | 522 | 21 | [`/?platform=react`](https://entele-visuals.vercel.app/?platform=react) |
 | **Astro** | 240 | 15 | [`/?platform=astro`](https://entele-visuals.vercel.app/?platform=astro) |
 | **Nuxt** | 140 | 20 | [`/?platform=nuxt`](https://entele-visuals.vercel.app/?platform=nuxt) |
+
+### 3. Immersive Website Prompts & 3D Scenes (683 Total Items)
+Curated prompt engineering and interactive visual assets for generative frontend creation with Claude 3.7 Sonnet, Cursor Composer, and GPT-4o:
+
+| Collection | Total Items | Free Items | Direct Live Query |
+|:---|:---|:---|:---|
+| **All Prompts** | **683** | **233** | [`/?mode=immersive`](https://entele-visuals.vercel.app/?mode=immersive) |
+| **Templates** | 59 | 24 | [`/?mode=immersive&category=template`](https://entele-visuals.vercel.app/?mode=immersive&category=template) |
+| **3D Scenes** | 114 | 38 | [`/?mode=immersive&category=3d_scene`](https://entele-visuals.vercel.app/?mode=immersive&category=3d_scene) |
+| **Sections** | 10 | 4 | [`/?mode=immersive&category=section`](https://entele-visuals.vercel.app/?mode=immersive&category=section) |
+| **Backgrounds** | 476 | 158 | [`/?mode=immersive&category=background`](https://entele-visuals.vercel.app/?mode=immersive&category=background) |
+| **Gradients** | 24 | 9 | [`/?mode=immersive&category=gradient`](https://entele-visuals.vercel.app/?mode=immersive&category=gradient) |
+
+Features:
+- **Instant Video Previews on Hover**: High-definition MP4 loops streaming from public CDN without playback lag.
+- **Multi-Viewport Device Inspection**: Preview each scene in Desktop (16:9), Tablet (4:3), and Mobile (9:16) aspect ratios.
+- **One-Click AI Copy Prompts**: Engineered prompts pre-formatted with tech stack, animation instructions, responsive rules, and sensory tone.
 
 ---
 

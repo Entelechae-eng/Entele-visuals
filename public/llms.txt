@@ -1,11 +1,19 @@
 # Entelechae Visuals
 
-> Entelechae Visuals is a creative frontend development and motion design resource discovery platform. It provides 897 interactive, copy-ready UI components and 28,047 web templates across Framer, Webflow, Shopify, Next.js, React, Astro, and Nuxt with live previews.
+> Entelechae Visuals is a creative frontend development, 3D motion, and AI-prompted web design resource platform. It provides 897 interactive UI components, 28,047 web templates across Framer, Webflow, Shopify, Next.js, React, Astro, and Nuxt, plus 683 immersive website prompts, 3D scenes, sections, backgrounds, and gradients with live HD video previews and multi-viewport inspection.
 
 ## Core Asset Collections
 - [All Motion Components](https://entele-visuals.vercel.app/?mode=components): 897 interactive UI components for React, Tailwind CSS, and Framer Motion.
 - [Web Templates Directory](https://entele-visuals.vercel.app/?mode=templates): 28,047 production website templates across modern frameworks with live iframe previews.
+- [Immersive Website Prompts & 3D Scenes](https://entele-visuals.vercel.app/?mode=immersive): 683 curated AI prompt blueprints for Claude, Cursor, v0, and GPT with HD video previews.
 - [Landing Page Sections](https://entele-visuals.vercel.app/?mode=sections): 92 modular hero sections, pricing tables, testimonials, features, and footer blocks.
+
+## Immersive Prompts & 3D Scenes
+- [Immersive Templates](https://entele-visuals.vercel.app/?mode=immersive&category=template): 59 full-page interactive website prompt architectures.
+- [3D Scenes](https://entele-visuals.vercel.app/?mode=immersive&category=3d_scene): 114 interactive Three.js, WebGL, Spline, and R3F spatial scene prompts.
+- [Interactive Sections](https://entele-visuals.vercel.app/?mode=immersive&category=section): 10 animated component blueprints and immersive page sections.
+- [Dynamic Backgrounds](https://entele-visuals.vercel.app/?mode=immersive&category=background): 476 fluid, particle, aurora, and generative visual background prompts.
+- [Shader Gradients](https://entele-visuals.vercel.app/?mode=immersive&category=gradient): 24 interactive CSS & WebGL mesh gradient shader prompts.
 
 ## Component Categories
 - [Background Animations](https://entele-visuals.vercel.app/?category=background-animation): 295 canvas, WebGL, particle, and gradient shader background animations.

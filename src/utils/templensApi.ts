@@ -15,6 +15,7 @@ interface SearchTemplatesParams {
   query?: string;
   platform?: PlatformType;
   onlyFree?: boolean;
+  category?: string;
   offset?: number;
   limit?: number;
 }
@@ -29,6 +30,7 @@ export async function fetchTemplates({
   query = '',
   platform = 'all',
   onlyFree = false,
+  category = 'all',
   offset = 0,
   limit = 24,
 }: SearchTemplatesParams): Promise<SearchTemplatesResponse> {
@@ -114,6 +116,16 @@ export async function fetchTemplates({
   if (onlyFree) {
     localFiltered = localFiltered.filter(
       (t) => !t.price || t.price === '0' || (t.pricing && t.pricing.toLowerCase().includes('free'))
+    );
+  }
+
+  if (category && category !== 'all') {
+    const catLower = category.toLowerCase();
+    localFiltered = localFiltered.filter(
+      (t) =>
+        (t.category && t.category.toLowerCase().includes(catLower)) ||
+        (t.site_type && t.site_type.toLowerCase().includes(catLower)) ||
+        (t.best_for && t.best_for.some((b) => b.toLowerCase().includes(catLower)))
     );
   }
 
