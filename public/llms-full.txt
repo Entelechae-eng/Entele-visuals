@@ -1,0 +1,76 @@
+# Entelechae Visuals — Complete Developer & AI Knowledge Specification
+
+> Entelechae Visuals (https://entele-visuals.vercel.app/) is a unified creative engineering and frontend resource discovery engine. Housing 29,627 verified web design assets across 3 primary catalogs: 897 interactive motion components, 28,047 full-site website templates, and 683 immersive website prompts & 3D scenes.
+
+## Core Identity & Brand
+- Name: Entelechae Visuals
+- Parent Organization: Entelechae (https://entelechae.com)
+- Production URL: https://entele-visuals.vercel.app/
+- Primary Tech Stack: React 18, TypeScript, Tailwind CSS, Vite, Framer Motion, Three.js, Lucide Icons
+- License: MIT License for code components, Creative Commons for public references
+
+---
+
+## 1. Interactive Motion Components Catalog (897 Items)
+Direct URL: https://entele-visuals.vercel.app/?mode=components
+
+Categorized in exact taxonomic structure:
+- Background Animations (295 assets) [/?category=background-animation]: Navier-Stokes fluid trails, particle networks, WebGL canvas shaders, digital matrix rain, generative noise fields, and aurora gradients.
+- Interactive Elements & 3D Cards (132 assets) [/?category=interactive-elements]: 3D perspective tilt cards, physics-based hover cards, dynamic spring widgets, interactive HUD overlays, and futuristic counters.
+- Kinetic Typography & Text Effects (91 assets) [/?category=text]: Smoky text dissolves, kinetic scroll reveals, multi-color gradient text, typewriter loops, and SVG text mask animations.
+- Landing Page Sections (92 assets) [/?mode=sections]: High-impact animated hero sections, interactive bento grids, pricing comparison matrices, testimonial marquees, KPI tally boards, FAQ accordions, and animated footers.
+- Motion Primitives & Transitions (102 assets) [/?category=animation]: Layout spring transitions, scroll-triggered fade/slide primitives, stagger lists, and magnetic interaction triggers.
+- Image Galleries & Carousels (50 assets) [/?category=image-gallery]: 3D perspective card stacks, horizontal drag carousels, expandable photo grids, and parallax gallery viewers.
+- Animated Buttons (29 assets) [/?category=button]: Shimmer border buttons, magnetic cursor pull buttons, liquid glow buttons, and neo-brutalist animated buttons.
+- Modern Spinners & Loaders (28 assets) [/?category=loader]: Minimalist progress indicators, geometric morph loaders, and pulse glow rings.
+- Custom Cursors (24 assets) [/?category=cursor]: Magnetic follower cursors, particle trail emitters, trailing glow circles, and spotlight cursors.
+- Retro Canvas Games (20 assets) [/?category=retro-games]: Playable retro arcade games built with vanilla HTML5 Canvas including Asteroids, Snake, Pong, and Tetris.
+
+---
+
+## 2. Web Templates Directory (28,047 Verified Templates)
+Direct URL: https://entele-visuals.vercel.app/?mode=templates
+
+Curated multi-framework directory featuring live interactive iframe preview, performance audit metrics, and responsive device testing (Desktop, Tablet, Mobile):
+- Framer (13,189 total / 7,886 free) [/?platform=framer]: Portfolio templates, SaaS landing pages, agency showcases, AI product marketing themes.
+- Webflow (11,658 total / 193 free) [/?platform=webflow]: Agency websites, CMS blogs, portfolio themes, animated corporate sites.
+- Shopify (1,486 total / 23 free) [/?platform=shopify]: Modern e-commerce storefronts, apparel boutiques, luxury product showcases.
+- Next.js (812 total / 32 free) [/?platform=nextjs]: Full-stack React App Router templates, developer portfolios, SaaS platforms.
+- React (522 total / 21 free) [/?platform=react]: Single-page applications, client dashboards, interactive landing pages.
+- Astro (240 total / 15 free) [/?platform=astro]: Content-first portfolio templates, documentation themes with zero runtime JS.
+- Nuxt & Vue (140 total / 20 free) [/?platform=nuxt]: Server-rendered Vue.js applications and creative design themes.
+
+---
+
+## 3. Immersive Website Prompts & 3D Spatial Scenes (683 Blueprints)
+Direct URL: https://entele-visuals.vercel.app/?mode=immersive
+
+Curated AI prompt blueprints optimized for frontier AI coding assistants (Claude 3.7 Sonnet, Cursor Composer, v0, GPT-4o):
+- Full-Site Website Templates (59 prompts) [/?mode=immersive&category=template]: Comprehensive architectural design blueprints for complete interactive websites.
+- 3D Spatial Scenes (114 prompts) [/?mode=immersive&category=3d_scene]: Three.js, React Three Fiber (R3F), and Spline 3D spatial scenes.
+- Interactive Sections (10 prompts) [/?mode=immersive&category=section]: High-impact animated hero sections, dynamic bento grids, and feature blocks.
+- Dynamic Backgrounds (476 prompts) [/?mode=immersive&category=background]: Fluid simulations, aurora waves, particle grids, and generative shaders.
+- Shader Mesh Gradients (24 prompts) [/?mode=immersive&category=gradient]: Interactive CSS mesh gradients and WebGL canvas shaders with 26 color variations each.
+
+Features:
+- Instant HD video loop preview streaming from public CDN (https://storage.getlayers.ai/).
+- Multi-viewport device testing: Desktop (16:9), Tablet (4:3), Mobile (9:16).
+- Structured prompt export containing technical architecture, visual styling, sensory tone, animation guidelines, and responsive behavior rules.
+
+---
+
+## Technical Integration Guide
+
+### Copy-Paste Component Installation
+1. Copy the TSX code directly from the Component Modal.
+2. Ensure Tailwind CSS is configured in your project.
+3. Install standard animation dependencies if required:
+   `npm install framer-motion lucide-react`
+4. Paste the component into your project with zero custom configuration.
+
+### Machine-Readable Endpoints
+- XML Sitemap: https://entele-visuals.vercel.app/sitemap.xml
+- LLM Overview: https://entele-visuals.vercel.app/llms.txt
+- Complete LLM Specification: https://entele-visuals.vercel.app/llms-full.txt
+- Agentic Resource Discovery: https://entele-visuals.vercel.app/.well-known/ai-catalog.json
+- IndexNow Key: https://entele-visuals.vercel.app/e7d4f82a1b9c3e5062a4d8f071b5e9ca.txt

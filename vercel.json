@@ -12,7 +12,11 @@
       "destination": "/api/templens"
     },
     {
-      "source": "/(.*)",
+      "source": "/.well-known/(.*)",
+      "destination": "/.well-known/$1"
+    },
+    {
+      "source": "/((?!api/|.*\\..*).*)",
       "destination": "/index.html"
     }
   ],
@@ -66,6 +70,19 @@
       ]
     },
     {
+      "source": "/llms-full.txt",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/markdown; charset=utf-8"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400, stale-while-revalidate=86400"
+        }
+      ]
+    },
+    {
       "source": "/e7d4f82a1b9c3e5062a4d8f071b5e9ca.txt",
       "headers": [
         {
@@ -96,6 +113,10 @@
         {
           "key": "Permissions-Policy",
           "value": "camera=(), microphone=(), geolocation=()"
+        },
+        {
+          "key": "Content-Signal",
+          "value": "search=yes, ai-train=yes"
         }
       ]
     }

@@ -3,13 +3,20 @@
   "entries": [
     {
       "identifier": "urn:air:entelechae:visuals:catalog",
-      "displayName": "Entelechae Visuals Motion & Template Catalog",
+      "displayName": "Entelechae Visuals — 29,627 Creative Web Resources",
       "type": "application/ai-catalog+json",
-      "url": "https://entele-visuals.vercel.app/llms.txt",
+      "url": "https://entele-visuals.vercel.app/llms-full.txt",
       "representativeQueries": [
         "animated React components",
-        "interactive UI templates",
-        "frontend motion design library"
+        "free website templates",
+        "Framer templates free",
+        "Webflow animated templates",
+        "Next.js web templates",
+        "immersive website prompts",
+        "3D scenes for websites",
+        "Cursor web design prompts",
+        "Tailwind animated buttons",
+        "WebGL background shaders"
       ]
     }
   ]

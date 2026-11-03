@@ -80,3 +80,4 @@ export const IMMERSIVE_CATEGORIES: ImmersiveCategoryMeta[] = [
     lede: 'Animated, pointer-interactive gradients drawn in pure WebGL — no libraries, no video.'
   }
 ];
+

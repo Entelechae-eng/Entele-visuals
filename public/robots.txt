@@ -1,14 +1,29 @@
 User-agent: *
 Allow: /
 
-# Dedicated AI Search & Evaluation Agents
+# Dedicated AI Search Engines & Conversational Answer Bots
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
 User-agent: GPTBot
 Allow: /
 
 User-agent: ClaudeBot
-Allow: /
-
-User-agent: PerplexityBot
 Allow: /
 
 User-agent: Google-Extended
@@ -23,4 +38,3 @@ Disallow: /*?*fbclid*
 
 # XML Sitemap
 Sitemap: https://entele-visuals.vercel.app/sitemap.xml
-
