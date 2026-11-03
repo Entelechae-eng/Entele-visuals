@@ -34,3 +34,4 @@ body:
       description: Explain the physics, triggers (scroll, hover, click), and responsive expectations.
     validations:
       required: true
+

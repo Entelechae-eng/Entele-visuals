@@ -55,3 +55,4 @@ body:
           required: true
         - label: I searched existing issues and confirmed this is not a duplicate.
           required: true
+

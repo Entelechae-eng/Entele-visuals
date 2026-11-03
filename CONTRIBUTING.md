@@ -136,3 +136,4 @@ entele-visuals/
 ## License
 
 By contributing to Entelechae Visuals, you agree that your contributions will be licensed under the project's [MIT License](LICENSE).
+

@@ -1,22 +1,27 @@
+# Entelechæ Sovereign Visuals
+
 <div align="center">
 
-# ⚡ Entelechae Visuals
+```
+  ███████╗███╗   ██╗████████╗███████╗██╗     ███████╗ ██████╗██╗  ██╗ █████╗ ███████╗
+  ██╔════╝████╗  ██║╚══██╔══╝██╔════╝██║     ██╔════╝██╔════╝██║  ██║██╔══██╗██╔════╝
+  █████╗  ██╔██╗ ██║   ██║   █████╗  ██║     █████╗  ██║     ███████║███████║█████╗  
+  ██╔══╝  ██║╚██╗██║   ██║   ██╔══╝  ██║     ██╔══╝  ██║     ██╔══██║██╔══██║██╔══╝  
+  ███████╗██║ ╚████║   ██║   ███████╗███████╗███████╗╚██████╗██║  ██║██║  ██║███████╗
+  ╚══════╝╚═╝  ╚═══╝   ╚═╝   ╚══════╝╚══════╝╚══════╝ ╚═════╝╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝
+```
 
-**The Unified Creative Engineering & Frontend Resource Discovery Platform**
+**Independent Technology Company · Sovereign Platforms & Deep Computational Synthesis**
 
-[![Live Production](https://img.shields.io/badge/Production-Live-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://entele-visuals.vercel.app/)
-[![Release](https://img.shields.io/badge/Release-v2.4.0-white?style=for-the-badge&logo=github&logoColor=black)](https://github.com/Entelechae-eng/Entele-visuals/releases)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge&logo=opensourceinitiative&logoColor=white)](LICENSE)
-[![CI Status](https://img.shields.io/badge/CI-Passing-brightgreen?style=for-the-badge&logo=githubactions&logoColor=white)](https://github.com/Entelechae-eng/Entele-visuals/actions)
-[![Total Resources](https://img.shields.io/badge/Total%20Resources-29%2C627-purple?style=for-the-badge&logo=docusaurus&logoColor=white)](https://entele-visuals.vercel.app/)
+[![Production](https://img.shields.io/badge/Production-Live-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://entele-visuals.vercel.app/)
+[![React](https://img.shields.io/badge/React-19.0.0-blue?style=for-the-badge&logo=react&logoColor=white)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.7-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v3.4-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![Framer Motion](https://img.shields.io/badge/Framer_Motion-Springs-black?style=for-the-badge&logo=framer&logoColor=white)](https://www.framer.com/motion/)
+[![Web Templates](https://img.shields.io/badge/Templates-28%2C047-purple?style=for-the-badge)](https://entele-visuals.vercel.app/?mode=templates)
+[![License](https://img.shields.io/badge/License-MIT-emerald?style=for-the-badge)](LICENSE)
 
-<p align="center">
-  <a href="https://entele-visuals.vercel.app/"><strong>Explore Platform</strong></a> &bull;
-  <a href="https://entele-visuals.vercel.app/?mode=templates"><strong>Web Templates (28,047)</strong></a> &bull;
-  <a href="https://entele-visuals.vercel.app/?mode=components"><strong>Motion Components (897)</strong></a> &bull;
-  <a href="https://entele-visuals.vercel.app/?mode=immersive"><strong>Immersive Prompts (683)</strong></a> &bull;
-  <a href="https://github.com/Entelechae-eng/Entele-visuals/discussions"><strong>Discussions</strong></a>
-</p>
+[Architecture](#-repository-architecture) • [Catalogs](#-core-resource-catalogs) • [Motion Library](#1-motion-components-catalog-897-items) • [Templates](#2-web-templates-discovery-suite-28047-templates) • [3D Prompts](#3-immersive-website-prompts--3d-scenes-683-items) • [Quick Start](#-getting-started) • [Stewardship](#founding-stewards)
 
 </div>
 
@@ -249,9 +254,19 @@ If you believe you have discovered a security vulnerability in Entelechae Visual
 
 ---
 
+## 🏛️ Founding Stewards
+
+- **Sahurain** — Co-Founder & Founding Steward (`sahurain15@gmail.com`)
+- **Tantresh Sahu** — Co-Founder & Founding Steward (`entelechae@gmail.com`)
+
+*Nodes anchored across New Delhi and San Francisco.*
+
+---
+
 ## 📜 License & Citation
 
-Entelechae Visuals is open-source software licensed under the **[MIT License](LICENSE)**.
+This project is licensed under the [MIT License](LICENSE).  
+© 2026 Entelechæ. All rights reserved.
 
 ```bibtex
 @software{entelechae_visuals_2026,
@@ -264,5 +279,5 @@ Entelechae Visuals is open-source software licensed under the **[MIT License](LI
 ```
 
 <div align="center">
-  <sub>Built with precision by <a href="https://entelechae.com">Entelechae</a>.</sub>
+  <sub>Built with precision by <a href="https://entelechae.com">Entelechæ</a>.</sub>
 </div>

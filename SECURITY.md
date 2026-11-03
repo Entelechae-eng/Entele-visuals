@@ -49,3 +49,4 @@ We consider security research conducted in accordance with this policy to be aut
 - Make a good faith effort to avoid privacy violations, data destruction, and interruption of production services.
 - Give us reasonable time to remedy the vulnerability before disclosing it publicly.
 - Do not exploit the vulnerability beyond what is strictly necessary to demonstrate its presence.
+

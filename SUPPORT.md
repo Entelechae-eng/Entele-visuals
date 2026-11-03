@@ -29,3 +29,4 @@ Need help with **Entelechae Visuals**? Here are the official resources and chann
 For partnership, commercial custom engineering, or enterprise design system integrations, please contact Entelechae directly:
 - **Website**: [https://entelechae.com](https://entelechae.com)
 - **Email**: `contact@entelechae.com`
+
