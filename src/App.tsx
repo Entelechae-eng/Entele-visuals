@@ -109,9 +109,11 @@ export const App: React.FC = () => {
     }
   }, [modeFilter, immersiveItems.length, isLoadingImmersive]);
 
-  // Initialize from URL query parameters on mount (Deep-linking & SEO)
+  // Initialize from URL pathname & query parameters on mount (Deep-linking & pSEO)
   useEffect(() => {
     try {
+      const pathname = window.location.pathname.toLowerCase().replace(/\/+$/, '');
+      const segments = pathname.split('/').filter(Boolean);
       const params = new URLSearchParams(window.location.search);
       const urlMode = params.get('mode') as ModeFilter | null;
       const urlCat = params.get('category');
@@ -120,6 +122,50 @@ export const App: React.FC = () => {
       const urlComp = params.get('component');
       const urlPrompt = params.get('prompt');
 
+      // 1. Path-based routing evaluation (e.g. /templates/framer, /components/buttons, /prompts/3d-scenes)
+      if (segments.length > 0) {
+        const rootSegment = segments[0];
+        const subSegment = segments[1];
+
+        if (rootSegment === 'templates') {
+          setModeFilter('templates');
+          if (subSegment && ['framer', 'webflow', 'shopify', 'nextjs', 'react', 'astro', 'nuxt'].includes(subSegment)) {
+            setSelectedPlatform(subSegment as PlatformType);
+          }
+        } else if (rootSegment === 'components') {
+          setModeFilter('components');
+          if (subSegment) {
+            setSelectedCategory(subSegment);
+          }
+        } else if (rootSegment === 'sections') {
+          setModeFilter('sections');
+          if (subSegment) {
+            setSelectedCategory(subSegment);
+          }
+        } else if (rootSegment === 'prompts' || rootSegment === 'immersive') {
+          setModeFilter('immersive');
+          if (subSegment) {
+            const promptSlugMap: Record<string, ImmersiveCategory> = {
+              'templates': 'template',
+              'template': 'template',
+              '3d-scenes': '3d_scene',
+              '3d_scene': '3d_scene',
+              '3d': '3d_scene',
+              'sections': 'section',
+              'section': 'section',
+              'backgrounds': 'background',
+              'background': 'background',
+              'gradients': 'gradient',
+              'gradient': 'gradient'
+            };
+            if (promptSlugMap[subSegment]) {
+              setSelectedImmersiveCategory(promptSlugMap[subSegment]);
+            }
+          }
+        }
+      }
+
+      // 2. Query parameters override (for backwards compatibility & deep linking)
       if (urlMode && ['templates', 'components', 'sections', 'immersive', 'all'].includes(urlMode)) {
         setModeFilter(urlMode);
       }
@@ -147,7 +193,6 @@ export const App: React.FC = () => {
         if (match) setPreviewComponent(match);
       }
       if (urlPrompt) {
-        // Will match once immersive items load
         import('./data/immersiveData.json').then((mod) => {
           const list = mod.default as ImmersiveItem[];
           setImmersiveItems(list);
@@ -163,52 +208,94 @@ export const App: React.FC = () => {
     }
   }, []);
 
-  // Sync state to URL and dynamically update document title (SEO & Shareability)
+  // Sync state to Clean Semantic URLs & dynamically update document title and meta description (pSEO & Virality)
   useEffect(() => {
     try {
-      const params = new URLSearchParams();
-      if (modeFilter !== 'templates') params.set('mode', modeFilter);
+      let basePath = '/';
       if (modeFilter === 'immersive') {
-        if (selectedImmersiveCategory !== 'all') params.set('category', selectedImmersiveCategory);
-      } else {
-        if (selectedCategory !== 'all') params.set('category', selectedCategory);
-        if (selectedPlatform !== 'all') params.set('platform', selectedPlatform);
+        const catSlugMap: Record<string, string> = {
+          template: 'templates',
+          '3d_scene': '3d-scenes',
+          section: 'sections',
+          background: 'backgrounds',
+          gradient: 'gradients'
+        };
+        basePath = selectedImmersiveCategory !== 'all'
+          ? `/prompts/${catSlugMap[selectedImmersiveCategory] || selectedImmersiveCategory}`
+          : '/prompts';
+      } else if (modeFilter === 'components') {
+        basePath = selectedCategory !== 'all' ? `/components/${selectedCategory}` : '/components';
+      } else if (modeFilter === 'sections') {
+        basePath = selectedCategory !== 'all' ? `/sections/${selectedCategory}` : '/sections';
+      } else if (modeFilter === 'templates') {
+        basePath = selectedPlatform !== 'all' ? `/templates/${selectedPlatform}` : '/templates';
       }
+
+      const params = new URLSearchParams();
       if (debouncedQuery) params.set('q', debouncedQuery);
 
       const searchStr = params.toString();
-      const newUrl = searchStr ? `?${searchStr}` : window.location.pathname;
-      window.history.replaceState({}, '', newUrl);
+      const finalUrl = searchStr ? `${basePath}?${searchStr}` : basePath;
+      window.history.replaceState({}, '', finalUrl);
 
-      // Dynamic Title
-      let dynamicTitle = 'Entele-Visuals — Animated Components & 28,047 Web Templates';
+      // Dynamic Title & Meta Description
+      let dynamicTitle = 'Entele-Visuals — Animated Components, 28,047 Web Templates & 3D Prompts';
+      let dynamicDescription = 'Entele-Visuals: 29,627 curated frontend resources. 897 interactive motion components, 28,047 web templates across Framer, Webflow, Shopify, Next.js, and 683 immersive 3D AI prompts.';
+
       if (modeFilter === 'immersive') {
         if (selectedImmersiveCategory === 'template') {
-          dynamicTitle = 'Immersive Website Templates — Entele-Visuals';
+          dynamicTitle = 'Immersive Website Templates & Prompts — Entele-Visuals';
+          dynamicDescription = 'Browse full-page immersive website prompts and 3D architectural blueprints for Cursor, Claude 3.7, and v0. Copy-ready WebGL and Tailwind setups.';
         } else if (selectedImmersiveCategory === '3d_scene') {
-          dynamicTitle = '3D Scene Prompts & WebGL — Entele-Visuals';
+          dynamicTitle = '3D Scene Prompts & WebGL Shaders — Entele-Visuals';
+          dynamicDescription = 'Interactive 3D WebGL scenes, Three.js shaders, and particle canvas prompts. 60fps GPU-accelerated blueprints for modern creative web development.';
         } else if (selectedImmersiveCategory === 'section') {
           dynamicTitle = 'Interactive Section Prompts — Entele-Visuals';
+          dynamicDescription = 'Copy-ready AI prompts for dynamic interactive landing page sections, features, and experiential layouts with live video demonstrations.';
         } else if (selectedImmersiveCategory === 'background') {
-          dynamicTitle = 'Animated Background Prompts — Entele-Visuals';
+          dynamicTitle = 'Animated Background Prompts & Shaders — Entele-Visuals';
+          dynamicDescription = 'Discover mesmerizing animated background prompts, WebGL shader flows, and GPU particle effects for modern high-converting websites.';
         } else if (selectedImmersiveCategory === 'gradient') {
-          dynamicTitle = 'Interactive WebGL Gradients — Entele-Visuals';
+          dynamicTitle = 'Interactive WebGL Gradients & Canvas Prompts — Entele-Visuals';
+          dynamicDescription = 'Dynamic color-shifting WebGL gradients and interactive canvas prompts designed for cutting-edge digital experiences.';
         } else {
           dynamicTitle = '683 Immersive Website Prompts & 3D Scenes — Entele-Visuals';
+          dynamicDescription = 'Explore 683 immersive website prompts, 3D scenes, sections, backgrounds, and gradients. Optimized for Claude 3.7, Cursor, v0, and GPT-4o.';
         }
-      } else if (selectedCategory !== 'all') {
-        const catObj = CATEGORIES.find((c) => c.id === selectedCategory);
-        const catName = catObj?.label || selectedCategory;
-        dynamicTitle = `${catName} Components — Entele-Visuals`;
-      } else if (selectedPlatform !== 'all') {
-        const pName = selectedPlatform.charAt(0).toUpperCase() + selectedPlatform.slice(1);
-        dynamicTitle = `${pName} Website Templates — Entele-Visuals`;
       } else if (modeFilter === 'components') {
-        dynamicTitle = '897 Animated Motion Components — Entele-Visuals';
+        if (selectedCategory !== 'all') {
+          const catObj = CATEGORIES.find((c) => c.id === selectedCategory);
+          const catName = catObj?.label || selectedCategory;
+          dynamicTitle = `${catName} Motion Components — Entele-Visuals`;
+          dynamicDescription = `Free copy-paste ${catName.toLowerCase()} components with smooth React and Tailwind animations. MIT Licensed with live preview and code generator.`;
+        } else {
+          dynamicTitle = '897 Animated Motion Components for React & Tailwind — Entele-Visuals';
+          dynamicDescription = 'Browse 897 interactive motion components for React, Framer Motion, and Tailwind CSS. Zero dependencies, instant code export, and live previews.';
+        }
       } else if (modeFilter === 'sections') {
-        dynamicTitle = 'Landing Page Sections & Heroes — Entele-Visuals';
+        if (selectedCategory !== 'all') {
+          const catObj = CATEGORIES.find((c) => c.id === selectedCategory);
+          const catName = catObj?.label || selectedCategory;
+          dynamicTitle = `${catName} Landing Page Sections — Entele-Visuals`;
+          dynamicDescription = `High-converting ${catName.toLowerCase()} section components for modern landing pages. Built with React and Tailwind CSS.`;
+        } else {
+          dynamicTitle = 'Landing Page Sections & Hero Components — Entele-Visuals';
+          dynamicDescription = 'Production-ready landing page sections: heroes, feature grids, pricing tables, testimonials, and CTAs for modern web apps.';
+        }
+      } else if (modeFilter === 'templates') {
+        if (selectedPlatform !== 'all') {
+          const pName = selectedPlatform.charAt(0).toUpperCase() + selectedPlatform.slice(1);
+          dynamicTitle = `${pName} Website Templates (${pName === 'Framer' ? '12,000+' : pName === 'Webflow' ? '10,000+' : '4,000+'}) — Entele-Visuals`;
+          dynamicDescription = `Discover thousands of verified ${pName} website templates. Free and premium modern responsive designs for portfolios, SaaS, and businesses.`;
+        } else {
+          dynamicTitle = '28,047 Web Templates Across Framer, Webflow, Shopify & Next.js — Entele-Visuals';
+          dynamicDescription = 'Directory of 28,047 verified website templates. Filter by Framer, Webflow, Shopify, Next.js, and React with live iframe previews.';
+        }
       }
+
       document.title = dynamicTitle;
+      const metaDesc = document.querySelector('meta[name="description"]');
+      if (metaDesc) metaDesc.setAttribute('content', dynamicDescription);
     } catch {
       // Ignore history API errors
     }

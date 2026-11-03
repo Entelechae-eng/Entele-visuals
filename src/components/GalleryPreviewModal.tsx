@@ -16,7 +16,9 @@ import {
   Monitor,
   Laptop,
   Tablet,
-  Smartphone
+  Smartphone,
+  Share2,
+  Link2
 } from 'lucide-react';
 
 interface GalleryPreviewModalProps {
@@ -38,10 +40,31 @@ export const GalleryPreviewModal: React.FC<GalleryPreviewModalProps> = ({
 }) => {
   const [isPlaying, setIsPlaying] = useState<boolean>(true);
   const [copied, setCopied] = useState<boolean>(false);
+  const [copiedLink, setCopiedLink] = useState<boolean>(false);
   const [isFullscreen, setIsFullscreen] = useState<boolean>(false);
   const [viewportMode, setViewportMode] = useState<ViewportMode>('full');
   const videoRef = useRef<HTMLVideoElement>(null);
   const stageRef = useRef<HTMLDivElement>(null);
+
+  const componentUrl = component
+    ? `https://entele-visuals.vercel.app/components?component=${encodeURIComponent(component.name)}`
+    : 'https://entele-visuals.vercel.app/components';
+
+  const handleCopyLink = () => {
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(componentUrl).then(() => {
+        setCopiedLink(true);
+        setTimeout(() => setCopiedLink(false), 2000);
+      });
+    }
+  };
+
+  const handleShareX = () => {
+    if (!component) return;
+    const tweetText = `Just discovered "${component.displayName}" on Entele-Visuals — free copy-paste animated React & Tailwind component:`;
+    const shareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(tweetText)}&url=${encodeURIComponent(componentUrl)}&hashtags=react,tailwind,webdev,frontend`;
+    window.open(shareUrl, '_blank', 'noopener,noreferrer');
+  };
 
   const currentIndex = useMemo(() => {
     if (!component) return -1;
@@ -240,6 +263,37 @@ export const GalleryPreviewModal: React.FC<GalleryPreviewModalProps> = ({
 
         {/* Right: Actions */}
         <div className="flex shrink-0 items-center gap-2">
+          {/* Share on X */}
+          <button
+            type="button"
+            onClick={handleShareX}
+            title="Share on X / Twitter"
+            className="ui-press hidden sm:flex items-center gap-1.5 rounded-xl bg-white/[0.05] hover:bg-white/10 border border-white/[0.08] px-3 py-1.5 text-xs sm:text-sm font-medium text-neutral-300 hover:text-white transition-colors"
+          >
+            <Share2 className="size-3.5" />
+            <span className="hidden md:inline">Share</span>
+          </button>
+
+          {/* Copy Direct Link */}
+          <button
+            type="button"
+            onClick={handleCopyLink}
+            title="Copy direct shareable link"
+            className="ui-press flex items-center gap-1.5 rounded-xl bg-white/[0.05] hover:bg-white/10 border border-white/[0.08] px-3 py-1.5 text-xs sm:text-sm font-medium text-neutral-300 hover:text-white transition-colors"
+          >
+            {copiedLink ? (
+              <>
+                <Check className="size-3.5 text-emerald-400" />
+                <span className="text-emerald-400">Copied!</span>
+              </>
+            ) : (
+              <>
+                <Link2 className="size-3.5" />
+                <span className="hidden sm:inline">Copy Link</span>
+              </>
+            )}
+          </button>
+
           {/* Open Code Button */}
           <button
             type="button"

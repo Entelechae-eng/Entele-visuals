@@ -13,7 +13,9 @@ import {
   Sparkles,
   Layers,
   Terminal,
-  Cpu
+  Cpu,
+  Share2,
+  Link2
 } from 'lucide-react';
 
 interface ImmersiveModalProps {
@@ -28,6 +30,7 @@ export const ImmersiveModal: React.FC<ImmersiveModalProps> = ({ item, onClose })
   const [activeTab, setActiveTab] = useState<TabType>('prompt');
   const [viewport, setViewport] = useState<ViewportType>('desktop');
   const [copied, setCopied] = useState<boolean>(false);
+  const [copiedLink, setCopiedLink] = useState<boolean>(false);
   const [isPlaying, setIsPlaying] = useState<boolean>(true);
   const videoRef = useRef<HTMLVideoElement>(null);
 
@@ -41,6 +44,8 @@ export const ImmersiveModal: React.FC<ImmersiveModalProps> = ({ item, onClose })
 
   if (!item) return null;
 
+  const itemUrl = `https://entele-visuals.vercel.app/prompts?prompt=${encodeURIComponent(item.id)}`;
+
   const handleCopy = (text: string) => {
     if (navigator.clipboard) {
       navigator.clipboard.writeText(text).then(() => {
@@ -48,6 +53,21 @@ export const ImmersiveModal: React.FC<ImmersiveModalProps> = ({ item, onClose })
         setTimeout(() => setCopied(false), 2000);
       });
     }
+  };
+
+  const handleCopyLink = () => {
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(itemUrl).then(() => {
+        setCopiedLink(true);
+        setTimeout(() => setCopiedLink(false), 2000);
+      });
+    }
+  };
+
+  const handleShareX = () => {
+    const tweetText = `Just discovered "${item.title}" on Entele-Visuals — 60fps 3D WebGL prompt ready for Claude 3.7, Cursor & v0:`;
+    const shareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(tweetText)}&url=${encodeURIComponent(itemUrl)}&hashtags=webdev,threejs,creativecoding,react`;
+    window.open(shareUrl, '_blank', 'noopener,noreferrer');
   };
 
   const togglePlay = () => {
@@ -137,6 +157,38 @@ export const ImmersiveModal: React.FC<ImmersiveModalProps> = ({ item, onClose })
                 title="Mobile View"
               >
                 <Smartphone className="w-3.5 h-3.5" />
+              </button>
+            </div>
+
+            {/* Share and Copy Link buttons */}
+            <div className="flex items-center gap-1.5">
+              <button
+                type="button"
+                onClick={handleCopyLink}
+                className="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-medium text-neutral-300 hover:text-white transition-colors"
+                title="Copy shareable direct link"
+              >
+                {copiedLink ? (
+                  <>
+                    <Check className="w-3.5 h-3.5 text-emerald-400" />
+                    <span className="text-emerald-400">Link Copied!</span>
+                  </>
+                ) : (
+                  <>
+                    <Link2 className="w-3.5 h-3.5" />
+                    <span className="hidden sm:inline">Copy Link</span>
+                  </>
+                )}
+              </button>
+
+              <button
+                type="button"
+                onClick={handleShareX}
+                className="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-medium text-neutral-300 hover:text-white transition-colors"
+                title="Share prompt on X / Twitter"
+              >
+                <Share2 className="w-3.5 h-3.5" />
+                <span className="hidden sm:inline">Share on X</span>
               </button>
             </div>
 
@@ -408,23 +460,43 @@ export const ImmersiveModal: React.FC<ImmersiveModalProps> = ({ item, onClose })
               <span className="text-[11px] font-mono text-neutral-500">
                 ID: {item.id} • Entelechae Immersive Vault
               </span>
-              <button
-                type="button"
-                onClick={() => handleCopy(item.prompt)}
-                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-white text-black text-xs font-semibold hover:bg-neutral-200 transition-colors shadow-lg active:scale-95"
-              >
-                {copied ? (
-                  <>
-                    <Check className="w-3.5 h-3.5 text-emerald-600" />
-                    <span>Prompt Copied!</span>
-                  </>
-                ) : (
-                  <>
-                    <Copy className="w-3.5 h-3.5" />
-                    <span>Copy AI Prompt</span>
-                  </>
-                )}
-              </button>
+              <div className="flex items-center gap-2">
+                <button
+                  type="button"
+                  onClick={handleCopyLink}
+                  className="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-white text-xs font-medium transition-colors"
+                  title="Copy direct share link"
+                >
+                  {copiedLink ? (
+                    <>
+                      <Check className="w-3.5 h-3.5 text-emerald-400" />
+                      <span className="text-emerald-400">Link Copied!</span>
+                    </>
+                  ) : (
+                    <>
+                      <Link2 className="w-3.5 h-3.5" />
+                      <span>Share</span>
+                    </>
+                  )}
+                </button>
+                <button
+                  type="button"
+                  onClick={() => handleCopy(item.prompt)}
+                  className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-white text-black text-xs font-semibold hover:bg-neutral-200 transition-colors shadow-lg active:scale-95"
+                >
+                  {copied ? (
+                    <>
+                      <Check className="w-3.5 h-3.5 text-emerald-600" />
+                      <span>Prompt Copied!</span>
+                    </>
+                  ) : (
+                    <>
+                      <Copy className="w-3.5 h-3.5" />
+                      <span>Copy AI Prompt</span>
+                    </>
+                  )}
+                </button>
+              </div>
             </div>
           </div>
         </div>

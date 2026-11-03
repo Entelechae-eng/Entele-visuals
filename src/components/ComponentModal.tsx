@@ -9,7 +9,9 @@ import {
   Code2,
   Bot,
   Layers,
-  Sparkles
+  Sparkles,
+  Link2,
+  Share2
 } from 'lucide-react';
 
 interface ComponentModalProps {
@@ -25,6 +27,21 @@ export const ComponentModal: React.FC<ComponentModalProps> = ({ component, onClo
   const [copiedCode, setCopiedCode] = useState(false);
   const [copiedInstall, setCopiedInstall] = useState(false);
   const [copiedPrompt, setCopiedPrompt] = useState(false);
+  const [copiedLink, setCopiedLink] = useState(false);
+
+  const componentUrl = `https://entele-visuals.vercel.app/components?component=${encodeURIComponent(component.name)}`;
+
+  const handleCopyLink = () => {
+    navigator.clipboard.writeText(componentUrl);
+    setCopiedLink(true);
+    setTimeout(() => setCopiedLink(false), 2000);
+  };
+
+  const handleShareX = () => {
+    const tweetText = `Check out "${component.displayName}" on Entele-Visuals — free copy-paste React & Tailwind component:`;
+    const shareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(tweetText)}&url=${encodeURIComponent(componentUrl)}&hashtags=react,tailwind,webdev`;
+    window.open(shareUrl, '_blank', 'noopener,noreferrer');
+  };
 
   const generatedCode = generateComponentCode(component, framework, styling);
 
@@ -72,13 +89,40 @@ export const ComponentModal: React.FC<ComponentModalProps> = ({ component, onClo
               {component.displayName}
             </h2>
           </div>
-          <button
-            onClick={onClose}
-            aria-label="Close modal"
-            className="flex size-8 items-center justify-center rounded-lg text-muted hover:text-white hover:bg-elevated transition-colors"
-          >
-            <X className="size-5" />
-          </button>
+          <div className="flex items-center gap-2">
+            <button
+              onClick={handleShareX}
+              title="Share on X / Twitter"
+              className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-white/10 bg-white/5 hover:bg-white/10 text-xs font-medium text-neutral-300 hover:text-white transition-colors"
+            >
+              <Share2 className="size-3.5" />
+              <span>Share</span>
+            </button>
+            <button
+              onClick={handleCopyLink}
+              title="Copy direct shareable link"
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-white/10 bg-white/5 hover:bg-white/10 text-xs font-medium text-neutral-300 hover:text-white transition-colors"
+            >
+              {copiedLink ? (
+                <>
+                  <Check className="size-3.5 text-emerald-400" />
+                  <span className="text-emerald-400">Copied!</span>
+                </>
+              ) : (
+                <>
+                  <Link2 className="size-3.5" />
+                  <span className="hidden sm:inline">Copy Link</span>
+                </>
+              )}
+            </button>
+            <button
+              onClick={onClose}
+              aria-label="Close modal"
+              className="flex size-8 items-center justify-center rounded-lg text-muted hover:text-white hover:bg-elevated transition-colors"
+            >
+              <X className="size-5" />
+            </button>
+          </div>
         </div>
 
         {/* Modal Body - 2 Columns on desktop */}

@@ -10,7 +10,10 @@ import {
   Gauge,
   ShoppingBag,
   Image as ImageIcon,
-  Globe
+  Globe,
+  Share2,
+  Link2,
+  Check
 } from 'lucide-react';
 
 interface TemplatePreviewModalProps {
@@ -28,6 +31,28 @@ export const TemplatePreviewModal: React.FC<TemplatePreviewModalProps> = ({
   const [device, setDevice] = useState<DeviceMode>('desktop');
   const [viewMode, setViewMode] = useState<ViewMode>('frame');
   const [isIframeLoading, setIsIframeLoading] = useState<boolean>(true);
+  const [copiedLink, setCopiedLink] = useState<boolean>(false);
+
+  const templateUrl = template
+    ? `https://entele-visuals.vercel.app/templates?q=${encodeURIComponent(template.name)}`
+    : 'https://entele-visuals.vercel.app/templates';
+
+  const handleCopyLink = () => {
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(templateUrl).then(() => {
+        setCopiedLink(true);
+        setTimeout(() => setCopiedLink(false), 2000);
+      });
+    }
+  };
+
+  const handleShareX = () => {
+    if (!template) return;
+    const platform = template.source || 'web';
+    const tweetText = `Check out "${template.name}" on Entele-Visuals — verified ${platform} website template:`;
+    const shareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(tweetText)}&url=${encodeURIComponent(templateUrl)}&hashtags=webdesign,${platform},templates`;
+    window.open(shareUrl, '_blank', 'noopener,noreferrer');
+  };
 
   // Close on Escape key
   useEffect(() => {
@@ -168,6 +193,37 @@ export const TemplatePreviewModal: React.FC<TemplatePreviewModalProps> = ({
 
         {/* Right: Actions */}
         <div className="flex shrink-0 items-center gap-2">
+          {/* Share on X */}
+          <button
+            type="button"
+            onClick={handleShareX}
+            title="Share on X / Twitter"
+            className="ui-press hidden md:flex items-center gap-1.5 rounded-lg bg-white/[0.05] hover:bg-white/10 border border-white/[0.08] px-3 py-1.5 text-xs font-medium text-neutral-300 hover:text-white transition-colors"
+          >
+            <Share2 className="size-3.5" />
+            <span>Share</span>
+          </button>
+
+          {/* Copy Direct Link */}
+          <button
+            type="button"
+            onClick={handleCopyLink}
+            title="Copy shareable link"
+            className="ui-press flex items-center gap-1.5 rounded-lg bg-white/[0.05] hover:bg-white/10 border border-white/[0.08] px-3 py-1.5 text-xs font-medium text-neutral-300 hover:text-white transition-colors"
+          >
+            {copiedLink ? (
+              <>
+                <Check className="size-3.5 text-emerald-400" />
+                <span className="text-emerald-400">Copied!</span>
+              </>
+            ) : (
+              <>
+                <Link2 className="size-3.5" />
+                <span className="hidden sm:inline">Share</span>
+              </>
+            )}
+          </button>
+
           {safeUrl && (
             <a
               href={safeUrl}

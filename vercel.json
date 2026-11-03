@@ -12,7 +12,7 @@
       "destination": "/api/templens"
     },
     {
-      "source": "/(components|templates|sections|prompts)(/.*)?",
+      "source": "/(components|templates|sections|prompts|immersive)(/.*)?",
       "destination": "/index.html"
     }
   ],
