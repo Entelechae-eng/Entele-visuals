@@ -1,120 +1,268 @@
-# Entele-Visuals
+<div align="center">
+
+# ⚡ Entelechae Visuals
+
+**The Unified Creative Engineering & Frontend Resource Discovery Platform**
 
 [![Live Production](https://img.shields.io/badge/Production-Live-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://entele-visuals.vercel.app/)
-[![License](https://img.shields.io/badge/License-MIT-white?style=for-the-badge&logo=opensourceinitiative&logoColor=black)](LICENSE)
-[![GitHub Repository](https://img.shields.io/badge/GitHub-Entelechae--eng%2FEntele--visuals-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Entelechae-eng/Entele-visuals)
+[![Release](https://img.shields.io/badge/Release-v2.4.0-white?style=for-the-badge&logo=github&logoColor=black)](https://github.com/Entelechae-eng/Entele-visuals/releases)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge&logo=opensourceinitiative&logoColor=white)](LICENSE)
+[![CI Status](https://img.shields.io/badge/CI-Passing-brightgreen?style=for-the-badge&logo=githubactions&logoColor=white)](https://github.com/Entelechae-eng/Entele-visuals/actions)
+[![Total Resources](https://img.shields.io/badge/Total%20Resources-29%2C627-purple?style=for-the-badge&logo=docusaurus&logoColor=white)](https://entele-visuals.vercel.app/)
 
-> High-performance, production-grade motion design system, web template discovery engine, and immersive AI design prompt suite. Housing **29,627 total creative resources**: **897 interactive motion components** (805 components + 92 landing sections across 20 categories), **28,047 web templates** (Framer, Webflow, Shopify, Next.js, React, Astro, Nuxt), and **683 immersive website prompts & 3D scenes** (Templates, 3D Scenes, Sections, Backgrounds, Gradients) with Cursor-style monochrome dark aesthetics, live responsive device emulation, hardened security sandboxing, and autonomous SEO & IndexNow infrastructure.
+<p align="center">
+  <a href="https://entele-visuals.vercel.app/"><strong>Explore Platform</strong></a> &bull;
+  <a href="https://entele-visuals.vercel.app/?mode=templates"><strong>Web Templates (28,047)</strong></a> &bull;
+  <a href="https://entele-visuals.vercel.app/?mode=components"><strong>Motion Components (897)</strong></a> &bull;
+  <a href="https://entele-visuals.vercel.app/?mode=immersive"><strong>Immersive Prompts (683)</strong></a> &bull;
+  <a href="https://github.com/Entelechae-eng/Entele-visuals/discussions"><strong>Discussions</strong></a>
+</p>
 
-🌐 **Live Website:** [https://entele-visuals.vercel.app/](https://entele-visuals.vercel.app/)
-
----
-
-## ⚡ Platform Architecture & Catalogs
-
-### 1. Motion Components Catalog (897 Total Items)
-Exact taxonomic and ordering parity matching OriginKit:
-- **805 Interactive Components**: Image galleries, Navier-Stokes fluid trails, 3D gravitational attraction, WebGL shaders, ASCII art, retro canvas games, smoky text typography, variable kinetic buttons, and cursor effects.
-- **92 Full Landing Sections**: High-impact animated heroes, interactive bento grids, pricing matrices, testimonial marquees, KPI tally stats, FAQ accordions, and animated footers.
-
-### 2. Templens Template Discovery Suite (28,047 Total Templates)
-Curated directory of full-site templates arranged in exact reference sequence:
-
-| Platform | Total Templates | Free Templates | Direct Live Query |
-|:---|:---|:---|:---|
-| **All Platforms** | **28,047** | **8,190** | [`/?mode=templates`](https://entele-visuals.vercel.app/?mode=templates) |
-| **Framer** | 13,189 | 7,886 | [`/?platform=framer`](https://entele-visuals.vercel.app/?platform=framer) |
-| **Webflow** | 11,658 | 193 | [`/?platform=webflow`](https://entele-visuals.vercel.app/?platform=webflow) |
-| **Shopify** | 1,486 | 23 | [`/?platform=shopify`](https://entele-visuals.vercel.app/?platform=shopify) |
-| **Next.js** | 812 | 32 | [`/?platform=nextjs`](https://entele-visuals.vercel.app/?platform=nextjs) |
-| **React** | 522 | 21 | [`/?platform=react`](https://entele-visuals.vercel.app/?platform=react) |
-| **Astro** | 240 | 15 | [`/?platform=astro`](https://entele-visuals.vercel.app/?platform=astro) |
-| **Nuxt** | 140 | 20 | [`/?platform=nuxt`](https://entele-visuals.vercel.app/?platform=nuxt) |
-
-### 3. Immersive Website Prompts & 3D Scenes (683 Total Items)
-Curated prompt engineering and interactive visual assets for generative frontend creation with Claude 3.7 Sonnet, Cursor Composer, and GPT-4o:
-
-| Collection | Total Items | Free Items | Direct Live Query |
-|:---|:---|:---|:---|
-| **All Prompts** | **683** | **233** | [`/?mode=immersive`](https://entele-visuals.vercel.app/?mode=immersive) |
-| **Templates** | 59 | 24 | [`/?mode=immersive&category=template`](https://entele-visuals.vercel.app/?mode=immersive&category=template) |
-| **3D Scenes** | 114 | 38 | [`/?mode=immersive&category=3d_scene`](https://entele-visuals.vercel.app/?mode=immersive&category=3d_scene) |
-| **Sections** | 10 | 4 | [`/?mode=immersive&category=section`](https://entele-visuals.vercel.app/?mode=immersive&category=section) |
-| **Backgrounds** | 476 | 158 | [`/?mode=immersive&category=background`](https://entele-visuals.vercel.app/?mode=immersive&category=background) |
-| **Gradients** | 24 | 9 | [`/?mode=immersive&category=gradient`](https://entele-visuals.vercel.app/?mode=immersive&category=gradient) |
-
-Features:
-- **Instant Video Previews on Hover**: High-definition MP4 loops streaming from public CDN without playback lag.
-- **Multi-Viewport Device Inspection**: Preview each scene in Desktop (16:9), Tablet (4:3), and Mobile (9:16) aspect ratios.
-- **One-Click AI Copy Prompts**: Engineered prompts pre-formatted with tech stack, animation instructions, responsive rules, and sensory tone.
+</div>
 
 ---
 
-## 🔍 SEO & Search Engine Infrastructure
+## 🧭 Overview
 
-Entele-Visuals runs a state-of-the-art organic search and agentic discovery engine:
+**Entelechae Visuals** is an open-source, production-grade frontend discovery engine and creative motion system built for frontend engineers, UI/UX designers, and creative technologists. 
 
-1. **RFC 9309 Crawler Directives (`/robots.txt`)**:
-   - Explicit permissions for Googlebot, Bingbot, GPTBot, Claude-SearchBot, PerplexityBot, and Applebot.
-   - Sitemap reference linked directly for continuous crawl discovery.
-2. **Automated IndexNow Protocol (`/e7d4f82a1b9c3e5062a4d8f071b5e9ca.txt`)**:
-   - Cryptographic host verification enabling immediate API-driven submissions across **Bing, Amazon, Naver, Seznam.cz, Yandex, and Yep**.
-3. **XML Sitemap (`/sitemap.xml`)**:
-   - 20 indexed category, template, and ecosystem routes with weekly change frequency and priority mapping.
-4. **LLM Engine Discovery (`/llms.txt`)**:
-   - Meets `llmstxt.org` and Lighthouse AI indexing specifications for citation in ChatGPT, Claude, Gemini, and Perplexity.
-5. **Agentic Resource Discovery (`/.well-known/ai-catalog.json`)**:
-   - ARD 1.0 specification with validated `urn:air:entelechae:visuals:catalog` identifiers.
-6. **Multi-Entity Schema.org JSON-LD**:
-   - Deep structured data graph declaring `WebSite`, `WebApplication`, and `Organization` entities.
-7. **Semantic Crawler Pre-render Fallback**:
-   - 274-word accessible `<header class="sr-only">` fallback inside `<div id="root">` ensuring bots index full taxonomy even without JavaScript execution.
+Housing **29,627 curated creative resources**, the platform brings together copy-paste React animations, full-site web templates, and generative 3D prompt blueprints into a single, high-performance interface styled with dark monochrome aesthetics (`#09090b`), active responsive device emulation, zero layout shift, and enterprise-grade SEO and agentic discovery protocols.
 
----
-
-## 🛡️ Security & Hardening
-
-1. **Protocol & URL Sanitization (`src/utils/security.ts`)**:
-   - Every external URL (iframe sources, marketplace listings, CDN media covers) is strictly sanitized via `sanitizeUrl()`, filtering out `javascript:`, `data:`, or `vbscript:` vectors.
-2. **Iframe Isolation**:
-   - Live template previews run under restricted sandbox flags: `sandbox="allow-scripts allow-forms allow-popups allow-modals"`.
-   - Prevented cross-origin privilege escalation by decoupling `allow-same-origin` from iframe execution.
-   - Enforced `referrerPolicy="no-referrer"` on all embedded previews.
-3. **HTTP Security Headers (`vercel.json`)**:
-   - `X-Content-Type-Options: nosniff`
-   - `X-Frame-Options: SAMEORIGIN`
-   - `Referrer-Policy: strict-origin-when-cross-origin`
-   - `Permissions-Policy: camera=(), microphone=(), geolocation=()`
-4. **Crash Resilience (`ErrorBoundary.tsx`)**:
-   - React tree wrapped in an Error Boundary providing immediate one-click workspace recovery.
+```
+       ┌─────────────────────────────────────────────────────────────┐
+       │                 ENTELECHAE VISUALS PLATFORM                 │
+       │                   29,627 Total Resources                    │
+       └──────────────────────────────┬──────────────────────────────┘
+                                      │
+         ┌────────────────────────────┼────────────────────────────┐
+         ▼                            ▼                            ▼
+┌──────────────────┐        ┌──────────────────┐        ┌──────────────────┐
+│  MOTION LIBRARY  │        │  TEMPLATE SUITE  │        │ IMMERSIVE SUITE  │
+│    897 Items     │        │  28,047 Items    │        │    683 Items     │
+├──────────────────┤        ├──────────────────┤        ├──────────────────┤
+│ • 805 Components │        │ • Framer (13.1k) │        │ • Templates (59) │
+│ • 92 Sections    │        │ • Webflow (11.6k)│        │ • 3D Scenes (114)│
+│ • 20 Categories  │        │ • Shopify (1.4k) │        │ • Sections (10)  │
+│ • Zero Install   │        │ • Next.js (812)  │        │ • Backdrops (476)│
+│ • MIT Licensed   │        │ • 8,190 Free     │        │ • Gradients (24) │
+└──────────────────┘        └──────────────────┘        └──────────────────┘
+```
 
 ---
 
-## 🚀 Performance & Production Bundling
+## 📑 Table of Contents
 
-- **Dynamic Lazy Chunking**: Heavy template data (`templatesData.json`) is dynamically imported on demand, dropping initial JavaScript payload from `4.8 MB` down to `208 kB` (gzipped).
-- **Independent Vendor Chunking**: `vendor-react` and `vendor-icons` are separated for maximum browser HTTP/2 cache reuse.
-- **Smooth Infinite Scrolling**: IntersectionObserver sentinel auto-loads the next batch of templates as users scroll near the bottom.
-- **Debounced Search**: 250ms debouncing ensures butter-smooth 60fps input responsiveness during live searches.
-- **Deep Linking & URL Sync**: Real-time URL query parameter synchronization (`?mode=`, `?category=`, `?platform=`, `?q=`, `?component=`) with automatic document `<title>` updates.
+- [Core Resource Catalogs](#-core-resource-catalogs)
+  - [1. Motion Components Catalog (897 items)](#1-motion-components-catalog-897-items)
+  - [2. Web Templates Discovery Suite (28,047 templates)](#2-web-templates-discovery-suite-28047-templates)
+  - [3. Immersive Website Prompts & 3D Scenes (683 items)](#3-immersive-website-prompts--3d-scenes-683-items)
+- [Repository Architecture](#-repository-architecture)
+- [Getting Started](#-getting-started)
+- [Engineering Highlights](#-engineering-highlights)
+- [Search Engine & Agentic Optimization (GEO)](#-search-engine--agentic-optimization-geo)
+- [Contributing & Governance](#-contributing--governance)
+- [Security & Disclosure](#-security--disclosure)
+- [License & Citation](#-license--citation)
 
 ---
 
-## 🛠️ Development & Deployment
+## ⚡ Core Resource Catalogs
 
-### Local Development
+### 1. Motion Components Catalog (897 Items)
+Interactive, copy-ready React TypeScript components styled with Tailwind CSS and powered by Framer Motion and WebGL shaders:
+
+| Category | Assets | Highlights & Visual Physics | Direct Link |
+|:---|:---:|:---|:---|
+| **Background Animations** | 295 | Navier-Stokes fluid trails, particle networks, WebGL shaders, digital matrix rain | [`?category=background-animation`](https://entele-visuals.vercel.app/?category=background-animation) |
+| **Interactive Elements & 3D** | 132 | 3D perspective tilt cards, physics hover widgets, holographic glass cards | [`?category=interactive-elements`](https://entele-visuals.vercel.app/?category=interactive-elements) |
+| **Motion Primitives** | 102 | Layout spring reveals, scroll triggers, stagger lists, entrance curves | [`?category=animation`](https://entele-visuals.vercel.app/?category=animation) |
+| **Landing Page Sections** | 92 | Animated hero headers, interactive bento grids, pricing matrices, testimonials | [`?mode=sections`](https://entele-visuals.vercel.app/?mode=sections) |
+| **Kinetic Typography** | 91 | Smoky text dissolves, kinetic scroll reveals, multi-color gradient typography | [`?category=text`](https://entele-visuals.vercel.app/?category=text) |
+| **Image Galleries** | 50 | 3D card stacks, horizontal drag carousels, expandable photo grids | [`?category=image-gallery`](https://entele-visuals.vercel.app/?category=image-gallery) |
+| **Animated Buttons** | 29 | Border shimmers, magnetic cursor pull buttons, liquid glow buttons | [`?category=button`](https://entele-visuals.vercel.app/?category=button) |
+| **Loaders & Spinners** | 28 | Minimalist progress indicators, geometric morph loaders, pulse glow rings | [`?category=loader`](https://entele-visuals.vercel.app/?category=loader) |
+| **Custom Cursors** | 24 | Magnetic followers, particle trail emitters, trailing glow circles | [`?category=cursor`](https://entele-visuals.vercel.app/?category=cursor) |
+| **Canvas Games** | 20 | Asteroids, Snake, Pong, and retro arcade games in vanilla HTML5 canvas | [`?category=retro-games`](https://entele-visuals.vercel.app/?category=retro-games) |
+
+---
+
+### 2. Web Templates Discovery Suite (28,047 Templates)
+A multi-ecosystem directory featuring live iframe device emulation, pagespeed performance audits, and direct creator listings:
+
+| Platform | Total Inventory | Free Tier | Target Niches | Direct Access |
+|:---|:---:|:---:|:---|:---|
+| **All Platforms** | **28,047** | **8,190** | SaaS, Portfolios, Agencies, E-commerce, Marketing | [`/?mode=templates`](https://entele-visuals.vercel.app/?mode=templates) |
+| **Framer** | 13,189 | 7,886 | Portfolios, SaaS landing pages, AI startups | [`/?platform=framer`](https://entele-visuals.vercel.app/?platform=framer) |
+| **Webflow** | 11,658 | 193 | Agency showcases, CMS blogs, animated portfolios | [`/?platform=webflow`](https://entele-visuals.vercel.app/?platform=webflow) |
+| **Shopify** | 1,486 | 23 | E-commerce storefronts, apparel boutiques | [`/?platform=shopify`](https://entele-visuals.vercel.app/?platform=shopify) |
+| **Next.js** | 812 | 32 | Full-stack App Router SaaS apps, developer blogs | [`/?platform=nextjs`](https://entele-visuals.vercel.app/?platform=nextjs) |
+| **React** | 522 | 21 | Admin dashboards, client portals, single-page sites | [`/?platform=react`](https://entele-visuals.vercel.app/?platform=react) |
+| **Astro** | 240 | 15 | Ultra-fast content sites with zero runtime JS | [`/?platform=astro`](https://entele-visuals.vercel.app/?platform=astro) |
+| **Nuxt** | 140 | 20 | Server-rendered Vue.js applications | [`/?platform=nuxt`](https://entele-visuals.vercel.app/?platform=nuxt) |
+
+---
+
+### 3. Immersive Website Prompts & 3D Scenes (683 Items)
+Generative design prompt blueprints optimized for frontier AI coding assistants (Claude 3.7 Sonnet, Cursor Composer, v0, and GPT-4o):
+
+| Collection | Items | Free Tier | Description | Direct Access |
+|:---|:---:|:---:|:---|:---|
+| **All Prompts** | **683** | **233** | Full collection with live hover video loops | [`/?mode=immersive`](https://entele-visuals.vercel.app/?mode=immersive) |
+| **Full Templates** | 59 | 24 | Complete architectural prompts for interactive websites | [`/?mode=immersive&category=template`](https://entele-visuals.vercel.app/?mode=immersive&category=template) |
+| **3D Scenes** | 114 | 38 | Three.js, React Three Fiber (R3F), and Spline scenes | [`/?mode=immersive&category=3d_scene`](https://entele-visuals.vercel.app/?mode=immersive&category=3d_scene) |
+| **Sections** | 10 | 4 | Tactile hero sections and interactive feature grids | [`/?mode=immersive&category=section`](https://entele-visuals.vercel.app/?mode=immersive&category=section) |
+| **Backgrounds** | 476 | 158 | Procedural noise, fluid dynamics, and particle grids | [`/?mode=immersive&category=background`](https://entele-visuals.vercel.app/?mode=immersive&category=background) |
+| **Gradients** | 24 | 9 | WebGL shader mesh gradients with 26 color variations | [`/?mode=immersive&category=gradient`](https://entele-visuals.vercel.app/?mode=immersive&category=gradient) |
+
+---
+
+## 🏛️ Repository Architecture
+
+```text
+Entele-visuals/
+├── .github/                       # GitHub Actions CI/CD & templates
+│   ├── ISSUE_TEMPLATE/            # Structured YAML issue forms
+│   │   ├── bug_report.yml         # Bug report template
+│   │   ├── component_request.yml  # New component/template proposal
+│   │   ├── feature_request.yml    # Feature proposal template
+│   │   └── config.yml             # Security & discussion links
+│   ├── workflows/                 # Continuous integration pipelines
+│   │   ├── ci.yml                 # Node.js 18/20/22 build verification
+│   │   └── codeql.yml             # GitHub CodeQL security analyzer
+│   └── PULL_REQUEST_TEMPLATE.md   # Standardized PR checklist
+├── api/                           # Vercel serverless edge functions
+│   └── templens.js                # Upstream template proxy & cache handler
+├── public/                        # Static assets & search specifications
+│   ├── .well-known/               # Agentic discovery metadata
+│   │   └── ai-catalog.json        # ARD 1.0 AI resource catalog
+│   ├── 404.html                   # Static RFC 9110 HTTP 404 page
+│   ├── e7d4f82a1b9c3e5062a4d8f071b5e9ca.txt # Cryptographic IndexNow key
+│   ├── llms.txt                   # LLM brief for AI crawlers
+│   ├── llms-full.txt              # Complete 29,627 resource specification
+│   ├── robots.txt                 # RFC 9309 crawler permissions
+│   └── sitemap.xml                # Multi-category XML search sitemap
+├── src/                           # Frontend React application
+│   ├── components/                # Modular UI components
+│   │   ├── ComponentCard.tsx      # Motion component item card
+│   │   ├── ComponentModal.tsx     # Code export & live preview modal
+│   │   ├── ImmersiveCard.tsx      # Hover video preview prompt card
+│   │   ├── ImmersiveHero.tsx      # Prompts header & category switcher
+│   │   ├── ImmersiveModal.tsx     # Multi-viewport prompt inspection
+│   │   ├── Sidebar.tsx            # Navigation drawer & mode selector
+│   │   ├── TemplateCard.tsx       # Web template showcase card
+│   │   └── TemplatePreviewModal.tsx # Sandboxed device frame emulator
+│   ├── data/                      # Catalogs & dataset records
+│   │   ├── categories.ts          # 20 motion component categories
+│   │   ├── components.json        # 897 interactive motion components
+│   │   ├── immersiveCategories.ts # 5 prompt category definitions
+│   │   ├── immersiveData.json     # 683 prompts & 3D scenes (lazy chunk)
+│   │   ├── templates.ts           # Template counts & platform definitions
+│   │   └── templatesData.json     # 1,774 curated offline templates
+│   ├── utils/                     # Utility services & security helpers
+│   │   ├── security.ts            # URL sanitization & XSS guardrails
+│   │   └── templensApi.ts         # Remote search & local fallback engine
+│   ├── App.tsx                    # Root orchestrator & URL state router
+│   ├── index.css                  # Tailwind CSS layer definitions
+│   ├── main.tsx                   # React 19 application entrypoint
+│   └── types/                     # Shared TypeScript interface definitions
+├── CITATION.cff                   # Formal academic citation format
+├── CODE_OF_CONDUCT.md             # Contributor Covenant 2.1 standard
+├── CONTRIBUTING.md                # Development & PR contribution guide
+├── LICENSE                        # MIT Open Source License
+├── package.json                   # Project manifest & dependencies
+├── SECURITY.md                    # Coordinated vulnerability disclosure policy
+├── SUPPORT.md                     # Community help & commercial contacts
+├── vercel.json                    # Vercel edge headers, routes & rewrites
+└── vite.config.ts                 # Vite bundler build optimization
+```
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+- **Node.js**: `>=18.0.0`
+- **Package Manager**: `npm` (v9+) or `pnpm`
+
+### Quick Start
 ```bash
+# 1. Clone repository
+git clone https://github.com/Entelechae-eng/Entele-visuals.git
+cd Entele-visuals
+
+# 2. Install dependencies
 npm install
+
+# 3. Launch local development server
 npm run dev
 ```
-Runs at `http://localhost:3000` with local reverse proxy forwarding `/api/templens` to prevent browser CORS blocks.
 
-### Production Build
+Visit [`http://localhost:5173`](http://localhost:5173) in your browser.
+
+### Production Build & Typecheck
 ```bash
+# Run TypeScript compilation and Vite production build
 npm run build
-```
-Typechecked with `tsc` and compiled via modern `vite build` into `dist/`.
 
-### Deployment
-- **Vercel**: Configured with automatic SPA routing, explicit MIME types, and cache-control headers in `vercel.json`.
-- **Repository**: Hosted at `https://github.com/Entelechae-eng/Entele-visuals.git`.
+# Preview production build locally
+npm run preview
+```
+
+---
+
+## 🛠️ Engineering Highlights
+
+1. **Pre-Hydration Semantic HTML Rendering**:
+   - The root document (`index.html`) includes 36.8 KB of visible semantic HTML containing H1 headings, full category listings, and FAQ answer blocks. Search crawlers and AI answer engines ingest the complete catalog on initial crawl without waiting for JavaScript execution.
+2. **On-Demand Lazy Chunking**:
+   - Large datasets (`immersiveData.json` 1.52 MB and `templatesData.json` 1.36 MB) are imported dynamically via `import(...)`. Vite code-splits them into independent chunks, ensuring initial homepage bundle size remains under 220 KB gzip.
+3. **Multi-Viewport Device Emulation**:
+   - Live modals simulate Desktop (16:9), Tablet (4:3), and Mobile (9:16) aspect ratios with active iframe sandboxing (`allow-scripts allow-same-origin`) and hardware-accelerated video streaming.
+4. **Resilient Dual-Layer Data Architecture**:
+   - Seamlessly queries the live Vercel Serverless Function `/api/templens` with automatic offline failover to a bundled dataset of 1,774 curated templates.
+
+---
+
+## 🔍 Search Engine & Agentic Optimization (GEO)
+
+Entelechae Visuals implements an industry-leading search architecture verified by the `claude-seo` framework:
+
+- **RFC 9309 Robots Protocol**: Deliberate crawler permissions for Googlebot, Bingbot, Applebot, GPTBot, Claude-SearchBot, and PerplexityBot.
+- **Lighthouse Agentic Browsing (ARD 1.0)**: Machine-readable specifications in [`/llms.txt`](https://entele-visuals.vercel.app/llms.txt), [`/llms-full.txt`](https://entele-visuals.vercel.app/llms-full.txt), and [`/.well-known/ai-catalog.json`](https://entele-visuals.vercel.app/.well-known/ai-catalog.json).
+- **Multi-Entity Schema.org Graph**: 12 structured data entities declared in JSON-LD (`WebSite`, `Organization`, `WebApplication`, `BreadcrumbList`, `FAQPage`, `Question`, `Answer`, `Offer`, `EntryPoint`, `SearchAction`, `ImageObject`, `ListItem`).
+- **HTTP Content-Signal**: Emits `Content-Signal: search=yes, ai-train=yes` header across all production responses.
+- **IndexNow Engine**: Automated cryptographic submission broadcasting to Bing, Yandex, Naver, Seznam.cz, and Yep.
+
+---
+
+## 🤝 Contributing & Governance
+
+We welcome pull requests, component contributions, and bug fixes! Please read our [CONTRIBUTING.md](CONTRIBUTING.md) guide for details on our development workflow, code style, and PR process.
+
+All community members are expected to follow our [Code of Conduct](CODE_OF_CONDUCT.md).
+
+---
+
+## 🛡️ Security & Disclosure
+
+If you believe you have discovered a security vulnerability in Entelechae Visuals, please consult our [Security Policy](SECURITY.md) and report it privately via [GitHub Security Advisories](https://github.com/Entelechae-eng/Entele-visuals/security/advisories/new) or by emailing `security@entelechae.com`.
+
+---
+
+## 📜 License & Citation
+
+Entelechae Visuals is open-source software licensed under the **[MIT License](LICENSE)**.
+
+```bibtex
+@software{entelechae_visuals_2026,
+  author = {Entelechae Engineering},
+  title = {Entelechae Visuals: Unified Creative Engineering and Web Template Discovery Suite},
+  url = {https://entele-visuals.vercel.app/},
+  version = {2.4.0},
+  year = {2026}
+}
+```
+
+<div align="center">
+  <sub>Built with precision by <a href="https://entelechae.com">Entelechae</a>.</sub>
+</div>

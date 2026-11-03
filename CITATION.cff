@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use Entelechae Visuals or reference its motion design architecture in your research or project, please cite it as below."
+title: "Entelechae Visuals: Unified Motion Design and Web Template Discovery Suite"
+version: 2.4.0
+date-released: 2026-11-03
+url: "https://entele-visuals.vercel.app/"
+repository-code: "https://github.com/Entelechae-eng/Entele-visuals"
+license: MIT
+authors:
+  - name: "Entelechae Engineering"
+    website: "https://entelechae.com"
+keywords:
+  - "motion design"
+  - "react components"
+  - "web templates"
+  - "generative web design"
+  - "tailwind css"
+  - "three js"
+  - "ai prompts"

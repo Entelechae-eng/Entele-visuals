@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 🛡️ Security Vulnerability Reporting
+    url: https://github.com/Entelechae-eng/Entele-visuals/security/policy
+    about: Report security issues privately through our coordinated disclosure process.
+  - name: 💬 Community Discussions & Questions
+    url: https://github.com/Entelechae-eng/Entele-visuals/discussions
+    about: Ask questions, share creative implementations, and connect with the community.

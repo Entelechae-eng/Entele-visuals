@@ -1,0 +1,36 @@
+name: Component / Template Request
+description: Request a new motion animation, 3D scene, or template category
+title: '[Resource Request]: '
+labels: ['resource-request', 'design']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Looking for a specific UI animation, 3D shader, or framework template? Let us know!
+  - type: dropdown
+    id: resource_type
+    attributes:
+      label: Resource Category
+      options:
+        - React Motion Component (Framer Motion / Tailwind)
+        - 3D Spatial Scene (Three.js / WebGL / Spline)
+        - Web Template (Framer / Next.js / Webflow / Shopify)
+        - Generative AI Prompt Blueprint (Cursor / Claude / v0)
+        - Canvas Game / Shader Backdrop
+    validations:
+      required: true
+  - type: input
+    id: reference_url
+    attributes:
+      label: Visual Reference / Inspiration URL
+      description: Link to an existing website, Dribbble shot, or video demonstrating the interaction.
+      placeholder: 'https://...'
+    validations:
+      required: false
+  - type: textarea
+    id: details
+    attributes:
+      label: Interaction & Motion Details
+      description: Explain the physics, triggers (scroll, hover, click), and responsive expectations.
+    validations:
+      required: true

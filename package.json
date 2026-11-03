@@ -1,12 +1,45 @@
 {
   "name": "entele-visuals",
-  "private": true,
-  "version": "2.2.0",
-  "description": "High-performance motion design engine & web template discovery suite with 897 interactive motion components and 28,047 web templates.",
+  "version": "2.4.0",
+  "description": "High-performance motion design engine & web template discovery suite with 897 interactive motion components, 28,047 web templates, and 683 immersive AI design prompts.",
   "type": "module",
+  "author": "Entelechae <engineering@entelechae.com>",
+  "license": "MIT",
+  "homepage": "https://entele-visuals.vercel.app",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Entelechae-eng/Entele-visuals.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Entelechae-eng/Entele-visuals/issues"
+  },
+  "keywords": [
+    "react",
+    "framer-motion",
+    "tailwind-css",
+    "ui-components",
+    "web-templates",
+    "framer",
+    "webflow",
+    "shopify",
+    "nextjs",
+    "astro",
+    "nuxt",
+    "3d-scenes",
+    "threejs",
+    "webgl-shaders",
+    "immersive-prompts",
+    "cursor-composer",
+    "claude-prompts",
+    "v0",
+    "motion-design",
+    "creative-coding",
+    "kinetic-typography"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
+    "typecheck": "tsc --noEmit",
     "preview": "vite preview"
   },
   "engines": {

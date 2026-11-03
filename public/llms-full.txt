@@ -74,3 +74,4 @@ Features:
 - Complete LLM Specification: https://entele-visuals.vercel.app/llms-full.txt
 - Agentic Resource Discovery: https://entele-visuals.vercel.app/.well-known/ai-catalog.json
 - IndexNow Key: https://entele-visuals.vercel.app/e7d4f82a1b9c3e5062a4d8f071b5e9ca.txt
+
